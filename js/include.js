@@ -11,7 +11,20 @@
     try { container.classList.add('include-loading'); } catch (e) { }
     try { container.setAttribute('aria-hidden', 'true'); } catch (e) { }
 
-    return fetch(path, { cache: 'no-store' })
+    // Normalize path: if it's not absolute (starts with / or scheme),
+    // resolve it against the site root so pages in subfolders can use
+    // `templates/header.html` without needing `../`.
+    var fetchPath = path;
+    try {
+      if (!/^[a-zA-Z]+:\/\//.test(path) && !path.startsWith('/')) {
+        // Use location.origin + '/' as base to resolve relative to site root
+        fetchPath = new URL(path, location.origin + '/').href;
+      }
+    } catch (e) {
+      fetchPath = path;
+    }
+
+    return fetch(fetchPath, { cache: 'no-store' })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP error ' + res.status);
         return res.text();
