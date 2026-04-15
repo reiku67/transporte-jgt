@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.transporte-jgt-timol.com/</loc>
+    <loc>https://www.transporte-jgt.com/</loc>
     <lastmod>2025-06-26</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.transporte-jgt-timol.com/services1.html</loc>
+    <loc>https://www.transporte-jgt.com/transporte/</loc>
     <lastmod>2025-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://www.transporte-jgt-timol.com/services2.html</loc>
-    <lastmod>2025-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.transporte-jgt-timol.com/contact.html</loc>
+    <loc>https://www.transporte-jgt.com/contacto/</loc>
     <lastmod>2024-11-08</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.transporte-jgt-timol.com/jobs.html</loc>
+    <loc>https://www.transporte-jgt.com/empleos/</loc>
     <lastmod>2024-05-27</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
