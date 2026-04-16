@@ -323,6 +323,35 @@ background-position: center;
     text-align: right;
 }
 
+/* Footer styles moved from templates/footer.html */
+.footer { background: #091828; color:#ffffff; padding:48px 0 18px; }
+.footer .footer-container { display:block; max-width:1200px; margin:0 auto; }
+.footer-top { display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px; align-items:start; }
+.footer-col h3{ font-size:1.05rem; margin:0 0 14px; letter-spacing:0.6px }
+.footer h3 { color: white; }
+.contact-list{ list-style:none; padding:0;  }
+.contact-list li{ display:flex; align-items:center; gap:12px; margin-bottom:12px; color:rgba(255,255,255,0.92); }
+.contact-list a{ color:inherit; text-decoration:none }
+.contact-list .icon{ width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; color:#0f2a40; border-radius:6px; font-weight:700; flex:0 0 34px }
+.logos-col .footer-logos{ display:flex; flex-direction:column; gap:12px; align-items:flex-start }
+.footer-logos img{ max-width:140px; opacity:0.95 }
+
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:28px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.04); font-size:0.95rem }
+.footer-actions{ display:flex; gap:12px; align-items:center }
+.lang-button{ background:#f6a623; color:#0f2a40; border:none; padding:10px 12px; border-radius:6px; font-weight:700; cursor:pointer }
+.back-to-top{ display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; background:#f6a623; color:#0f2a40; border-radius:6px; text-decoration:none }
+.footer small{ color:rgba(255,255,255,0.6) }
+
+@media (max-width:900px){
+    .footer-top{ grid-template-columns:1fr; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; gap:10px }
+    .footer-logos img{ max-width:120px }
+}
+@media (max-width:768px){
+        .back-to-top{ display:none !important; }
+}
+
+
 
 .footer p {
     color: inherit;
@@ -485,7 +514,26 @@ button.cta-button {
     margin: 0 auto;
 }
 /* Removed unused: .video-section */
-.services-cta-wrapper{margin-top:2rem;text-align:center; color:inherit;}
+.services-cta-wrapper{margin:20px 0 40px; text-align:center; color:inherit;}
+
+/* Utility spacing helpers created to replace inline styles in HTML */
+.mt-20 { margin-top: 20px; }
+.mb-40 { margin-bottom: 40px; }
+.pt-20 { padding-top: 20px; }
+.pb-40 { padding-bottom: 40px; }
+.pb-50 { padding-bottom: 50px; }
+.hidden { display: none !important; }
+
+/* Vacantes / listado de empleos (movido desde empleos/index.html) */
+.vacantes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-medium);
+}
+.vacante{display:block;overflow:hidden;position:relative;text-decoration:none}
+.vacante img{display:block;filter:brightness(.85);height:220px;object-fit:cover;width:100%}
+.vacante-title{background-color:rgba(16,22,36,.85);box-sizing:border-box;color:white;font-size:1.15rem;font-weight:700;padding:calc(var(--spacing-unit)*1.5) calc(var(--spacing-unit)*2);position:absolute;left:0;bottom:0;text-align:center;width:100%}
+.vacante:hover .vacante-title,.vacante:focus-within .vacante-title{background-color:var(--color-accent);}
 
 /* Removed unused tech list styles */
 
