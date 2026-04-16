@@ -123,7 +123,7 @@ strong {
 }
 
 a {
-    color: #343a40;
+    color: #ffffff;
     text-decoration: none;
 }
 /* Emphasis link style (replaces inline styles in HTML) */
@@ -851,14 +851,6 @@ label[for="human-check"] { margin: 0; color: var(--color-text); font-weight: 500
     display: block;
     height: auto;
     object-fit: cover;
-}
-
-.contact-email a {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    color: var(--color-link);
-    font-weight: 600;
 }
 
 
