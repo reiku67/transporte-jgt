@@ -123,7 +123,7 @@ strong {
 }
 
 a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 /* Emphasis link style (replaces inline styles in HTML) */
@@ -1022,7 +1022,7 @@ noscript + [data-include],
     }
 }
 .contact-info-container h2, .contact-info-container h3 { color: #fff; }
-.contact-info-container a { color: rgba(255,255,255,0.95); text-decoration: underline; }
+.contact-info-container a { color: rgba(0, 0, 0, 0.95); text-decoration: underline; }
 .contact-card .form-group { margin-bottom: 12px; }
 .contact-card input[type="text"], .contact-card input[type="email"], .contact-card input[type="tel"], .contact-card textarea {
     width: 100%;
