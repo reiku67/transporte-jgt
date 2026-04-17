@@ -1043,7 +1043,19 @@ noscript + [data-include],
 }
 @media (max-width: 900px) {
   .contact-card { flex-direction: column; padding: 18px; }
-  .contact-info-container { order: -1; width: 100%; }
+    .contact-info-container {
+        order: -1;
+        /* Make the blue band extend edge-to-edge on small screens */
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        box-sizing: border-box;
+        /* keep existing vertical padding but ensure horizontal spacing remains comfortable */
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 
