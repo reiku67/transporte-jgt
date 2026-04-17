@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://www,transporte-jgt.com/sitemap.xml
+Sitemap: https://www.transporte-jgt.com/sitemap.xml
