@@ -24,23 +24,27 @@ function initMobileMenuToggle() {
 
   function toggle() { setOpen(!mobileBtn.classList.contains('open')); }
 
-  mobileBtn.addEventListener('click', function (e) { e.preventDefault(); toggle(); });
-  mobileBtn.addEventListener('touchstart', function (e) { e.preventDefault(); toggle(); }, { passive: false });
-
-  // Delegated fallback: some mobile browsers or include loaders can
-  // cause the button to not receive events directly. Listen at document
-  // level and toggle when the button (or a child) is tapped/clicked.
-  let _lastToggle = 0;
-  function _docToggleHandler(e) {
-    const btn = e.target && e.target.closest && e.target.closest('#mobile-menu-button');
-    if (!btn) return;
-    const now = Date.now();
-    if (now - _lastToggle < 300) return; // debounce
-    _lastToggle = now;
-    try { e.preventDefault(); toggle(); } catch (err) { /* noop */ }
+  // Single, unified activation handler: prefer Pointer Events to avoid
+  // duplicate touch+click events that required double-tap previously.
+  function buttonActivateHandler(e) {
+    try { if (e && typeof e.preventDefault === 'function') e.preventDefault(); } catch (err) {}
+    toggle();
   }
-  document.addEventListener('click', _docToggleHandler, true);
-  document.addEventListener('touchstart', _docToggleHandler, { passive: false, capture: true });
+
+  if (window.PointerEvent) {
+    mobileBtn.addEventListener('pointerup', buttonActivateHandler);
+  } else {
+    mobileBtn.addEventListener('click', buttonActivateHandler);
+    mobileBtn.addEventListener('touchend', function (e) { e.preventDefault(); buttonActivateHandler(e); }, { passive: false });
+  }
+
+  // Keyboard activation (Enter / Space) for accessibility
+  mobileBtn.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
 
   if (overlay) overlay.addEventListener('click', function () { setOpen(false); });
 

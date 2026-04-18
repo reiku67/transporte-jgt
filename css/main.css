@@ -67,13 +67,6 @@ html {
 
 /* Header transition helpers (no separate top bar) */
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-}
-
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -299,11 +292,7 @@ background-position: center;
 
 
 
-.footer {
-
-    color: white;
-     font-size: 0.9rem;
-}
+/* footer basic styles are defined further down */
 
 .footer-container {
     align-items: flex-start;
