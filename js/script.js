@@ -22,10 +22,21 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    mobileBtn.addEventListener('click', function (e) {
+    let _lastToggle = 0;
+    function _handleToggleEvent(e) {
       e.preventDefault();
+      const now = Date.now();
+      if (now - _lastToggle < 350) return; // debounce duplicate touch/click events
+      _lastToggle = now;
       const isOpen = mobileBtn.classList.contains('open');
       setMenuOpen(!isOpen);
+    }
+
+    mobileBtn.addEventListener('click', _handleToggleEvent);
+    mobileBtn.addEventListener('touchstart', _handleToggleEvent, { passive: false });
+    // prevent unwanted pointer interaction duplicates on some devices
+    mobileBtn.addEventListener('pointerdown', function (e) {
+      if (e.pointerType && e.pointerType !== 'mouse') e.preventDefault();
     });
 
     if (overlay) {
