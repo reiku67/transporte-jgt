@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
+    // Expose control functions globally as a fallback for pages where
+    // the init listener couldn't attach properly.
+    try {
+      window.setMobileMenuOpen = setMenuOpen;
+      window.toggleMobileMenu = function () { setMenuOpen(!mobileBtn.classList.contains('open')); };
+    } catch (err) { /* noop */ }
+
     let _lastToggle = 0;
     function _handleToggleEvent(e) {
       e.preventDefault();
@@ -38,6 +45,21 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileBtn.addEventListener('pointerdown', function (e) {
       if (e.pointerType && e.pointerType !== 'mouse') e.preventDefault();
     });
+
+    // Document-level delegation fallback: if for any reason the button's
+    // local listeners didn't attach, ensure clicks/touches still toggle menu.
+    function _docDelegateToggle(e) {
+      const btn = e.target.closest && e.target.closest('#mobile-menu-button');
+      if (!btn) return;
+      // Avoid double-handling if local handler already ran recently
+      const now = Date.now();
+      if (now - _lastToggle < 300) return;
+      _lastToggle = now;
+      try { if (typeof window.toggleMobileMenu === 'function') window.toggleMobileMenu(); }
+      catch (err) { /* noop */ }
+    }
+    document.addEventListener('click', _docDelegateToggle, true);
+    document.addEventListener('touchstart', _docDelegateToggle, { passive: false, capture: true });
 
     if (overlay) {
       overlay.addEventListener('click', function () { setMenuOpen(false); });
@@ -95,3 +117,20 @@ document.addEventListener('includes:loaded', function () {
     try { window.initMobileMenuToggle(); } catch (e) { console.warn('initMobileMenuToggle failed', e); }
   }
 });
+
+// Ensure menu initializes even if header is injected later (supports various include loaders)
+(function ensureMenuReady() {
+  if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation')) {
+    try { if (typeof window.initMobileMenuToggle === 'function') window.initMobileMenuToggle(); } catch (e) { console.warn('initMobileMenuToggle failed', e); }
+    return;
+  }
+
+  const mo = new MutationObserver(function (mutations, observer) {
+    if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation')) {
+      try { if (typeof window.initMobileMenuToggle === 'function') window.initMobileMenuToggle(); } catch (e) { console.warn('initMobileMenuToggle failed', e); }
+      observer.disconnect();
+    }
+  });
+
+  mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+})();
