@@ -27,6 +27,21 @@ function initMobileMenuToggle() {
   mobileBtn.addEventListener('click', function (e) { e.preventDefault(); toggle(); });
   mobileBtn.addEventListener('touchstart', function (e) { e.preventDefault(); toggle(); }, { passive: false });
 
+  // Delegated fallback: some mobile browsers or include loaders can
+  // cause the button to not receive events directly. Listen at document
+  // level and toggle when the button (or a child) is tapped/clicked.
+  let _lastToggle = 0;
+  function _docToggleHandler(e) {
+    const btn = e.target && e.target.closest && e.target.closest('#mobile-menu-button');
+    if (!btn) return;
+    const now = Date.now();
+    if (now - _lastToggle < 300) return; // debounce
+    _lastToggle = now;
+    try { e.preventDefault(); toggle(); } catch (err) { /* noop */ }
+  }
+  document.addEventListener('click', _docToggleHandler, true);
+  document.addEventListener('touchstart', _docToggleHandler, { passive: false, capture: true });
+
   if (overlay) overlay.addEventListener('click', function () { setOpen(false); });
 
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mobileBtn.classList.contains('open')) setOpen(false); });
