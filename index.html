@@ -16,7 +16,8 @@
     <link rel="icon" href="/icons/jgt-2.webp" type="image/webp" sizes="48x48">
     <link rel="icon" href="/icons/JGT.png" type="image/png" sizes="48x48">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="preload" href="css/main.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
 
     <link rel="preload" href="img/equipos.jpg" as="image">
     <link rel="prefetch" href="https://www.transporte-jgt.com/transporte/">
@@ -38,7 +39,7 @@
     <h1 class="main-title">Transporte JGT S.R.L y Timol S.R.L </h1>
     
     <section class="hero">
-        <img src="img/equipos.jpg" alt="Fondo hero" fetchpriority="high" loading="eager">
+        <img src="img/equipos.jpg" alt="Fondo hero" fetchpriority="high" loading="eager" width="1200" height="700">
     </section>
 
     <!-- contenido principal -->
@@ -52,7 +53,7 @@
                 <p>Nos adaptamos a las necesidades particulares de cada cliente, siempre dispuestos a colaborar.</p>
             </div>
             <div class="image-content">
-                <img src="img/8.webp" alt="Equipo profesional de Transporte JGT y Timol" class="section-image">
+                <img src="img/8.webp" alt="Equipo profesional de Transporte JGT y Timol" class="section-image" width="355" height="474">
             </div>
         </section>
 
@@ -60,16 +61,16 @@
         <section>
             <h2 id="lineas-servicio-heading">Nuestras Líneas de Servicio</h2>
                 <div class="service-cards-container" aria-label="Tarjetas de servicios principales">
-                    <a href="/transporte/" class="service-card" aria-label="Desmontaje, traslado y montaje de equipamiento pesado">
-                        <img src="img/grid1.webp" alt="Equipamiento pesado en operación, transporte de cargas pesadas y de gran porte" loading="lazy">
+                        <a href="/transporte/" class="service-card" aria-label="Desmontaje, traslado y montaje de equipamiento pesado">
+                        <img src="img/grid1.webp" alt="Equipamiento pesado en operación, transporte de cargas pesadas y de gran porte" loading="lazy" width="355" height="284">
                         <div class="service-card-title">DTM</div>
                     </a>
                     <a href="/alquileres/" class="service-card" aria-label="Servicios móviles y complementarios">
-                        <img src="img/vivienda.jpg" alt="Alquileres de vivienda" loading="lazy">
+                        <img src="img/vivienda.jpg" alt="Alquileres de vivienda" loading="lazy" width="355" height="404">
                         <div class="service-card-title">Alquileres para Campamento</div>
                     </a>
                     <a href="/transporte/#servicios-moviles-complementarios" class="service-card">
-                        <img src="img/gomeria-movil.webp" alt="Gomería móvil atendiendo maquinaria pesada" loading="lazy">
+                        <img src="img/gomeria-movil.webp" alt="Gomería móvil atendiendo maquinaria pesada" loading="lazy" width="355" height="266">
                         <div class="service-card-title">Gomería Móvil</div>
                     </a>
 

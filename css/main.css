@@ -152,6 +152,14 @@ hr {
 background-position: center;
 }
 
+/* Ensure hero images fill the hero area responsively without causing layout shift */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 
 /* Primary CTA left as-is but can be simplified elsewhere */
 .cta-primary{ z-index: 3; }
