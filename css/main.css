@@ -4,6 +4,7 @@
     --spacing-unit: 0.5rem; /* 8px */
     --gap-medium: 1rem; /* 16px */
     --container-width-mobile: 90%;
+    scroll-padding-top: var(--header-height);
 
     /* Accents & core palette */
     --color-accent: #1F4D7A;
@@ -86,7 +87,7 @@ body {
     line-height: 1.65;
     margin: 0;
     overflow-x: hidden;
-    padding-top: calc(var(--header-height) - 0.625rem); /* keep visual spacing; roughly 70px -> 60px */
+    padding-top: var(--header-height); /* reserve full header space to avoid layout shift */
 }
 
 
@@ -181,15 +182,8 @@ background-position: center;
     max-width: 10rem; /* 160px -> 10rem */
     width: auto;
     filter: drop-shadow(0 0 0.625rem #91888629); /* 10px -> 0.625rem */
-}
 
-/* Asegurar que las imágenes de los logos estén centradas verticalmente
-   y no introduzcan offset por alineación de línea o márgenes */
-.logos-left img,
-.header .logos-left a img {
-    display: block;
-    margin: 0;
-    align-self: center;
+/* Header transition helpers (no separate top bar) */
     max-height: calc(var(--header-height) - 0.625rem);
 }
 
@@ -510,6 +504,26 @@ button.cta-button {
 :focus-visible {
     outline: 3px solid rgba(0, 86, 179, 0.18);
     outline-offset: 3px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    background: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    z-index: 2000;
 }
 
 .km-guard-inner{
