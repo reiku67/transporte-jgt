@@ -24,7 +24,7 @@
       fetchPath = path;
     }
 
-    return fetch(fetchPath, { cache: 'no-store' })
+    return fetch(fetchPath, { cache: 'default' })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP error ' + res.status);
         return res.text();
