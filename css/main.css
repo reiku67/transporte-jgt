@@ -174,6 +174,16 @@ hr {
 .navlink:is(:hover, .active)       { color: #fff; }
 .navlink:is(:hover, .active)::after { transform: scaleX(1); }
 
+.navlink--external { gap: 0.3rem; opacity: 0.75; }
+.navlink--external:hover { opacity: 1; }
+
+/* ── Header scroll shrink ────────────────────────────────── */
+.header { transition: height var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease); }
+.header--scrolled {
+    height: calc(var(--header-height) - 0.75rem);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
 /* ── Mobile menu button ──────────────────────────────────── */
 .mobile-menu-button {
     display: none;
