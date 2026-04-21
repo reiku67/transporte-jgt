@@ -223,7 +223,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72vh;
+    height: clamp(220px, 72vh, 700px);
     overflow: hidden;
     position: relative;
     margin-bottom: 1.875rem;
