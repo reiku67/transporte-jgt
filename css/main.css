@@ -1,8 +1,3 @@
-/* ============================================================
-   TRANSPORTE JGT — main.css
-   ============================================================ */
-
-/* ── Variables ───────────────────────────────────────────── */
 :root {
     --gap:           1rem;
     --header-height: 4.375rem;
@@ -231,7 +226,7 @@ article { display: block; }
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(180px, 60vh, 700px);
+    height: clamp(180px, 70vh, 700px);
     overflow: hidden;
     position: relative;
     margin-bottom: 3.5rem;
@@ -578,20 +573,16 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 #como-postular p { max-width: 43.75rem; margin-inline: auto; }
 
 /* ── data-include transitions (prevents FOUC) ────────────── */
-[data-include] { transition: opacity 180ms ease, visibility 0ms linear 180ms; }
-
-html.includes-loading [data-include],
-[data-include].include-loading {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
+[data-include] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
-html.includes-loaded [data-include],
 [data-include].include-ready {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transition-delay: 0ms;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 180ms ease;
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
@@ -602,7 +593,7 @@ html.includes-loaded [data-include],
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    .hero { height: clamp(180px, 42vh, 420px); }
+    .hero { height: clamp(180px, 62vh, 420px); }
 
     html { scroll-padding-top: calc(var(--header-height) + 0.9375rem) !important; }
     #logo1, #logo2 { height: 2.1875rem; max-width: 7.5rem; }
@@ -707,7 +698,7 @@ html.includes-loaded [data-include],
     #coverage .pin-icon { width: 2.25rem; height: 2.25rem; }
     .image-content img { aspect-ratio: unset; object-fit: contain; }
     .cta-button { display: block; width: 100%; margin: 1.25rem 0; }
-    .hero { height: clamp(160px, 35vh, 340px); }
+    .hero { height: clamp(160px, 65vh, 340px); }
 
     .metrics-container {
         flex-direction: column;
