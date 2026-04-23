@@ -231,7 +231,7 @@ article { display: block; }
     position: relative;
     margin-bottom: 3.5rem;
 }
-.hero img { width: 100%; height: 100%; object-fit: cover; }
+.hero img {height: clamp(180px, 70vh, 700px); object-fit: cover; }
 
 /* ── Bands ───────────────────────────────────────────────── */
 .band       { padding: 3rem 0; }
