@@ -696,7 +696,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     .footer { font-size: 0.85rem; padding: 1.875rem 0; }
     #coverage .coverage-circle { width: 45%; }
     #coverage .pin-icon { width: 2.25rem; height: 2.25rem; }
-    .image-content img { aspect-ratio: unset; object-fit: contain; }
+    .image-content img { aspect-ratio: 4 / 3; object-fit: cover; }
     .cta-button { display: block; width: 100%; margin: 1.25rem 0; }
     .hero { height: clamp(160px, 75vh, 340px); }
 
