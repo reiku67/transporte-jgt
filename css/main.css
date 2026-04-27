@@ -12,13 +12,10 @@
     --color-heading: #343a40;
     --color-border:  #ced4da;
 
-    --gold:          var(--color-primary);
-
-    --cta-text:      #fff;
     --dark:          #0B1F33;
     --band-muted:    #e3e8ed;
 
-    --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+    --ease:          cubic-bezier(0.6, 0, 0.2, 1);
     --t:             0.2s;
 
     scroll-padding-top: var(--header-height);
@@ -441,7 +438,7 @@ article { display: block; }
     padding: 0.75rem 1.5rem;
     background: var(--color-accent);
     border: none;
-    color: var(--cta-text);
+    color: var(--color-surface);
     box-shadow: 0 0.5rem 1.25rem rgba(31,77,122,0.25);
     cursor: pointer;
     font-size: 0.9rem;
@@ -517,7 +514,7 @@ article { display: block; }
 
 .lang-button {
     background: var(--color-primary);
-    color: var(--cta-text);
+    color: var(--color-surface);
     border: none;
     padding: 0.625rem 0.75rem;
     font-weight: 700;
@@ -529,7 +526,7 @@ article { display: block; }
     justify-content: center;
     width: 3rem; height: 3rem;
     background: var(--color-primary);
-    color: var(--cta-text);
+    color: var(--color-surface);
 }
 
 /* ── Contact page ────────────────────────────────────────── */
