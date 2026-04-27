@@ -3,7 +3,7 @@
     --header-height: 4.375rem;
 
     --color-primary: #ffb703;
-    --color-accent:  #1F4D7A;
+    --color-accent:  #1c5e9f;
     --color-link:    #0056b3;
     --color-bg:      #eef1f4;
     --color-surface: #ffffff;
@@ -13,8 +13,6 @@
     --color-border:  #ced4da;
 
     --gold:          var(--color-primary);
-    --cta-start:     #1F4D7A;
-    --cta-end:       #163a5c;
     --cta-text:      #fff;
     --dark:          #0B1F33;
     --band-muted:    #e3e8ed;
@@ -440,7 +438,7 @@ article { display: block; }
     justify-content: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    background: var(--cta-start);
+    background: var(--color-accent);
     border: none;
     color: var(--cta-text);
     box-shadow: 0 0.5rem 1.25rem rgba(31,77,122,0.25);
