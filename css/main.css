@@ -606,7 +606,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    .hero { height: clamp(180px, 72vh, 420px); }
+    .hero { height: clamp(260px, 78vh, 560px); }
 
     html { scroll-padding-top: calc(var(--header-height) + 0.9375rem) !important; }
     #logo1, #logo2 { height: 2.1875rem; max-width: 7.5rem; }
@@ -711,7 +711,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     #coverage .pin-icon { width: 2.25rem; height: 2.25rem; }
     .image-content img { aspect-ratio: 4 / 3; object-fit: cover; }
     .cta-button { display: block; width: 100%; margin: 1.25rem 0; }
-    .hero { height: clamp(160px, 75vh, 340px); }
+    .hero { height: clamp(260px, 82vh, 600px); }
 
     .metrics-container {
         flex-direction: column;
