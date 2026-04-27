@@ -448,12 +448,6 @@ article { display: block; }
     font-weight: 600;
     letter-spacing: 0.01em;
     margin-top: 0.875rem;
-    transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
-}
-.btn:is(:hover, :focus),
-.cta-button:is(:hover, :focus) {
-    box-shadow: 0 0.875rem 2rem rgba(31,77,122,0.38);
-    text-decoration: none;
 }
 
 /* ── Client logos ────────────────────────────────────────── */
