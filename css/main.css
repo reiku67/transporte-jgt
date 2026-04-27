@@ -13,9 +13,9 @@
     --color-border:  #ced4da;
 
     --gold:          var(--color-primary);
-    --cta-start:     #ffd24d;
-    --cta-end:       var(--color-primary);
-    --cta-text:      #08223a;
+    --cta-start:     #d4900f;
+    --cta-end:       #b87210;
+    --cta-text:      #fff;
     --dark:          #0B1F33;
     --band-muted:    #e3e8ed;
 
@@ -442,18 +442,17 @@ article { display: block; }
     background: linear-gradient(90deg, var(--cta-start), var(--cta-end));
     border: none;
     color: var(--cta-text);
-    box-shadow: 0 0.5rem 1.25rem rgba(255,183,3,0.2);
+    box-shadow: 0 0.5rem 1.25rem rgba(184,114,16,0.22);
     cursor: pointer;
     font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     margin-top: 0.875rem;
-    text-transform: uppercase;
     transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 .btn:is(:hover, :focus),
 .cta-button:is(:hover, :focus) {
-    box-shadow: 0 0.875rem 2rem rgba(255,183,3,0.35);
+    box-shadow: 0 0.875rem 2rem rgba(184,114,16,0.32);
     text-decoration: none;
 }
 
