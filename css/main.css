@@ -242,6 +242,7 @@ article { display: block; }
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
+      text-transform: uppercase;
     padding: 0.75rem 1.5rem;
     background: var(--dark);
     color: #fff;
@@ -448,6 +449,7 @@ article { display: block; }
     font-weight: 600;
     letter-spacing: 0.01em;
     margin-top: 0.875rem;
+      text-transform: uppercase;
 }
 
 /* ── Client logos ────────────────────────────────────────── */
