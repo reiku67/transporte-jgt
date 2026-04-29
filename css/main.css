@@ -261,7 +261,6 @@ article { display: block; }
 .band-dark,
 .band-accent { background: var(--dark);          color: #fff; }
 .band-muted  { background: var(--band-muted);    color: var(--color-text); }
-.band-white  { background: var(--color-surface); color: var(--color-text); }
 
 .band-dark   h1, .band-dark   h2, .band-dark   h3, .band-dark   h4,
 .band-accent h1, .band-accent h2, .band-accent h3, .band-accent h4 { color: #fff; }
