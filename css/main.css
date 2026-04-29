@@ -408,7 +408,7 @@ article { display: block; }
     transition: filter var(--t) var(--ease);
 }
 .service-card:is(:hover, :focus-within) img,
-.vacante:is(:hover, :focus-within)      img { filter: brightness(0.75); }
+.vacante:is(:hover, :focus-within)     
 
 .service-card-title,
 .vacante-title {
