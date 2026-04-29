@@ -405,8 +405,7 @@ article { display: block; }
     height: 13.75rem;
     object-fit: cover;
 }
-.service-card:is(:hover, :focus-within) img,
-.vacante:is(:hover, :focus-within)     
+   
 
 .service-card-title,
 .vacante-title {
