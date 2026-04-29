@@ -404,8 +404,6 @@ article { display: block; }
     width: 100%;
     height: 13.75rem;
     object-fit: cover;
-    filter: brightness(0.85);
-    transition: filter var(--t) var(--ease);
 }
 .service-card:is(:hover, :focus-within) img,
 .vacante:is(:hover, :focus-within)     
