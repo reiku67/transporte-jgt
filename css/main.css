@@ -12,7 +12,7 @@
     --color-heading: #343a40;
     --color-border:  #ced4da;
 
-    --dark:          #0B1F33;
+    --dark:          #0A1C3F;
     --band-muted:    #e3e8ed;
 
     --ease:          cubic-bezier(0.6, 0, 0.2, 1);
@@ -472,7 +472,7 @@ article { display: block; }
 }
 
 /* ── Footer ──────────────────────────────────────────────── */
-.footer { background: #091828; color: #fff; padding: 3rem 0 1.125rem; }
+.footer { background: var(--dark); color: #fff; padding: 3rem 0 1.125rem; }
 .footer p,
 .footer small { color: rgba(255,255,255,0.7); font-size: inherit; }
 .footer h3    { color: #fff; font-size: 1.05rem; margin: 0 0 0.875rem; letter-spacing: 0.04em; }
