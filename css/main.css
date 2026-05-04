@@ -109,7 +109,6 @@ article { display: block; }
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 1000;
-    transition: height var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 
 .header-container {
@@ -174,7 +173,7 @@ article { display: block; }
 
 .header--scrolled {
     height: calc(var(--header-height) - 0.75rem);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+
 }
 
 /* ── Mobile menu button ──────────────────────────────────── */
@@ -271,7 +270,6 @@ article { display: block; }
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.28);
     color: #fff;
-    box-shadow: none;
 }
 .band-dark   .cta-button:is(:hover, :focus),
 .band-accent .cta-button:is(:hover, :focus) { background: rgba(255,255,255,0.18); box-shadow: none; }
@@ -316,14 +314,14 @@ article { display: block; }
 /* ── Key metrics ─────────────────────────────────────────── */
 #key-metrics,
 #key-metrics-guard {
-    background: var(--color-surface);
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    background: #000000;
+    color: white;
     margin: 3rem 0 0;
     padding: 4rem 3rem;
 }
 #key-metrics-guard {
     margin-top: 1.5rem;
-    margin-bottom: 0;
+        color: white;
 }
 #coverage        { margin-top: 3rem; }
 #key-metrics img { height: 1.2em; width: 1.2em; vertical-align: middle; }
@@ -342,9 +340,9 @@ article { display: block; }
     flex-direction: column;
     align-items: center;
 }
-.metric-item .icon   { font-size: 2.8rem; color: var(--color-primary); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; }
+.metric-item .icon   { font-size: 2.8rem;  margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; }
 .metric-item .icon img { height: 2.8rem; width: 2.8rem; }
-.metric-item .number { font-size: 2.5rem; font-weight: 700; color: var(--color-heading); }
+.metric-item .number { font-size: 2.5rem; font-weight: 700;   }
 .metric-item .label  { font-size: 1rem; color: var(--color-muted); }
 
 .km-guard-inner { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; text-align: center; }
