@@ -442,16 +442,16 @@ article { display: block; }
 }
 
 /* ── Client logos ────────────────────────────────────────── */
-#client-logos { text-align: center; margin-top: 3.5rem; }
+#client-logos { text-align: center; margin: 6rem; }
 
 .client-logo-track {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem 2rem;
+    gap: 2rem 5rem;
 }
-.client-logo-track img { max-height: 3rem; object-fit: contain; }
+.client-logo-track img { max-height: 6rem; object-fit: contain; }
 
 /* ── Misc ────────────────────────────────────────────────── */
 .link-animated { color: var(--color-link); font-weight: 700; }
