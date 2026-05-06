@@ -3,7 +3,7 @@
     --header-height: 4.375rem;
 
     --color-primary: #ffb703;
-    --color-accent:  #010b83;
+    --color-accent:  #112d64;
     --color-link:    #0056b3;
     --color-bg:      #eef1f4;
     --color-surface: #ffffff;
@@ -315,7 +315,7 @@ article { display: block; }
 #key-metrics,
 #key-metrics-guard {
     border: 1px solid #0056b3;
-    border-radius: 0.625rem;
+    border-radius: 0.rem;
     color: var(--color-heading);
     margin: 3rem 0 0;
     padding: 4rem 3rem;
