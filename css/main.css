@@ -314,14 +314,14 @@ article { display: block; }
 /* ── Key metrics ─────────────────────────────────────────── */
 #key-metrics,
 #key-metrics-guard {
-    background: #000000;
-    color: white;
+    border: 1px solid #0056b3;
+    border-radius: 0.625rem;
+    color: var(--color-heading);
     margin: 3rem 0 0;
     padding: 4rem 3rem;
 }
 #key-metrics-guard {
     margin-top: 1.5rem;
-        color: white;
 }
 #coverage        { margin-top: 3rem; }
 #key-metrics img { height: 1.2em; width: 1.2em; vertical-align: middle; }
