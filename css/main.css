@@ -442,7 +442,7 @@ article { display: block; }
 }
 
 /* ── Client logos ────────────────────────────────────────── */
-#client-logos { text-align: center; margin: 6rem; }
+#client-logos { text-align: center; margin-top: 6rem; margin-bottom: 6rem; }
 
 .client-logo-track {
     display: flex;
