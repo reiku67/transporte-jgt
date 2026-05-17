@@ -451,7 +451,15 @@ article { display: block; }
     justify-content: center;
     gap: 2rem 5rem;
 }
-.client-logo-track img { max-height: 6rem; object-fit: contain; }
+.client-logo-track img {
+    max-height: 4.5rem;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+.client-logo-track img:hover { opacity: 1; }
 
 /* ── Misc ────────────────────────────────────────────────── */
 .link-animated { color: var(--color-link); font-weight: 700; }
