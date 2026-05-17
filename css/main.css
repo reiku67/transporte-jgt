@@ -68,9 +68,9 @@ article { display: block; }
 
 /* ── Layout ──────────────────────────────────────────────── */
 .container {
-    max-width: 87.5rem;
+    max-width: clamp(87.5rem, 90vw, 120rem);
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: clamp(1rem, 2vw, 3rem);
 }
 
 /* ── Utilities ───────────────────────────────────────────── */
@@ -222,7 +222,7 @@ article { display: block; }
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(180px, 70vh, 700px);
+    height: clamp(180px, 70vh, 900px);
     overflow: hidden;
     position: relative;
     margin-bottom: 3.5rem;
@@ -783,6 +783,85 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     #key-metrics-guard { margin-bottom: 1.5rem; }
 
     .content-section { margin-bottom: 2rem; }
+}
+
+/* Large screens (≥ 1440px) */
+@media (min-width: 90rem) {
+    body { font-size: 1.2rem; }
+
+    .content-section {
+        gap: 4rem;
+        margin-bottom: 5rem;
+    }
+
+    #key-metrics,
+    #key-metrics-guard {
+        padding: 5rem 4rem;
+    }
+
+    #client-logos {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+    }
+
+    .service-card img,
+    .vacante img {
+        height: 18rem;
+    }
+}
+
+/* Extra large screens (≥ 1920px) */
+@media (min-width: 120rem) {
+    :root { --header-height: 5.5rem; }
+
+    body { font-size: 1.3rem; }
+
+    h1 { font-size: clamp(2.4rem, 3vw, 3.5rem); }
+    h2 { font-size: clamp(2rem, 2.5vw, 3rem); }
+    h3 { font-size: clamp(1.5rem, 1.8vw, 2rem); }
+
+    .hero { height: clamp(500px, 60vh, 1000px); }
+
+    .hero-whatsapp {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .metric-item .number { font-size: 3.5rem; }
+    .metric-item .icon img { height: 3.5rem; width: 3.5rem; }
+    .km-guard-title { font-size: 2.8rem; }
+
+    .service-card img,
+    .vacante img {
+        height: 22rem;
+    }
+
+    .service-cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #key-metrics,
+    #key-metrics-guard {
+        padding: 6rem 5rem;
+    }
+
+    .client-logo-track img {
+        max-height: 6rem;
+    }
+
+    .cta-button, .btn {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+
+    .footer { padding: 4rem 0 1.5rem; }
+    .footer-top {
+        max-width: 100rem;
+        gap: 3rem;
+    }
+    .footer-bottom {
+        max-width: 100rem;
+    }
 }
 
 /* ── Motion accessibility ────────────────────────────────── */
