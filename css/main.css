@@ -783,6 +783,19 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     #key-metrics-guard { margin-bottom: 1.5rem; }
 
     .content-section { margin-bottom: 2rem; }
+
+    .client-logo-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+    }
+    .client-logo-track img {
+        max-height: 3.5rem;
+        max-width: 100%;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 /* Large screens (≥ 1440px) */
