@@ -514,13 +514,13 @@ article { display: block; }
 .footer-slogan {
     overflow: hidden;
     padding: 2rem 0 0;
-    line-height: 1;
+    line-height: 1.1;
 }
 .footer-slogan span {
     display: block;
     font-size: clamp(2.5rem, 7vw, 9rem);
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.22);
+    color: rgba(255,255,255,0.58);
     letter-spacing: -0.02em;
     white-space: normal;
     padding: 0;
