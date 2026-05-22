@@ -484,7 +484,6 @@ article { display: block; }
     grid-template-columns: repeat(3, 1fr);
     gap: 1.75rem;
     align-items: start;
-    max-width: 75rem;
     margin-inline: auto;
 }
 .footer-bottom {
@@ -492,7 +491,6 @@ article { display: block; }
     justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
-    max-width: 75rem;
     margin: 1.75rem auto 0;
     padding-top: 1.125rem;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -512,6 +510,22 @@ article { display: block; }
 }
 .logos-col .footer-logos { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
 .footer-logos img { max-width: 8.75rem; opacity: 0.95; }
+
+.footer-slogan {
+    overflow: hidden;
+    padding: 2rem 0 0;
+    line-height: 1;
+}
+.footer-slogan span {
+    display: block;
+    font-size: clamp(2.5rem, 7vw, 9rem);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.22);
+    letter-spacing: -0.02em;
+    white-space: normal;
+    padding: 0;
+    user-select: none;
+}
 
 .lang-button {
     background: var(--color-primary);
