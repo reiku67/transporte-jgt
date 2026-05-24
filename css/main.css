@@ -613,7 +613,6 @@ article { display: block; }
 
 #contact-form label {
     display: block;
-    margin-bottom: 0.4rem;
     font-weight: 600;
     font-size: 0.875rem;
     color: var(--color-heading);
