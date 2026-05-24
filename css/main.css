@@ -10,15 +10,15 @@
     --color-primary: #ffb703;
     --color-accent:  #112d64;
     --color-link:    #0056b3;
-    --color-bg:      #eef1f4;
+    --color-bg:      #f2f2f2;
     --color-surface: #ffffff;
     --color-text:    #495057;
     --color-muted:   #6c757d;
     --color-heading: #343a40;
-    --color-border:  #ced4da;
+    --color-border:  #c3c3c3;
 
     --dark:          #0A1C3F;
-    --band-muted:    #e3e8ed;
+    --band-muted:    #ededed;
 
     --ease:          cubic-bezier(0.6, 0, 0.2, 1);
     --t:             0.2s;
