@@ -550,17 +550,40 @@ article { display: block; }
 }
 
 /* ── Client logos ────────────────────────────────────────── */
-#client-logos { text-align: center; margin-top: 6rem; margin-bottom: 6rem; }
+#client-logos {
+    background: #ffffff;
+    border: 1px solid rgba(17, 45, 100, 0.08);
+    box-shadow: 0 1px 2px rgba(17, 45, 100, 0.04);
+    text-align: left;
+    margin: 1.5rem 0;
+    padding: 2.75rem 2.5rem;
+}
+#client-logos h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    color: var(--color-accent);
+    margin: 0 0 2rem;
+}
+#client-logos::before {
+    content: "Clientes";
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+}
 
 .client-logo-track {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 2rem 5rem;
+    justify-content: flex-start;
+    gap: 2rem 3.5rem;
 }
 .client-logo-track img {
-    max-height: 4.5rem;
+    max-height: 4rem;
     width: auto;
     object-fit: contain;
     mix-blend-mode: multiply;
@@ -904,6 +927,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     #key-metrics { padding: 2rem 1.5rem; margin: 1.5rem 0 0; }
     #key-metrics-guard { padding: 2rem 1.5rem; margin: 1.25rem 0; }
+    #client-logos { padding: 2rem 1.5rem; margin: 1.25rem 0; }
 
     .km-guard-inner {
         flex-direction: column;
@@ -940,11 +964,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     #key-metrics { padding: 3.5rem 4rem; }
     #key-metrics-guard { padding: 3rem 4rem; }
-
-    #client-logos {
-        margin-top: 8rem;
-        margin-bottom: 8rem;
-    }
+    #client-logos { padding: 3.5rem 4rem; margin: 1.5rem 0; }
 
     .service-card img,
     .vacante img {
