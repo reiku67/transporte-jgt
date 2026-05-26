@@ -830,7 +830,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         position: fixed;
         inset: var(--header-height) 0 0 0;
         height: calc(100dvh - var(--header-height));
-        background: #03213d;
+        background: VAR(--dark);
         display: flex;
         flex-direction: column;
         overflow-y: auto;
