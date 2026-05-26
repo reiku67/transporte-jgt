@@ -231,7 +231,7 @@ article { display: block; }
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(180px, 70vh, 900px);
+    height: clamp(180px, 76vh, 900px);
     overflow: hidden;
     position: relative;
     margin-bottom: 3.5rem;
