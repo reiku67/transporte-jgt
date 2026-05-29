@@ -284,7 +284,7 @@ article { display: block; }
 .band-accent .cta-button:is(:hover, :focus) { background: rgba(255,255,255,0.18); box-shadow: none; }
 
 /* ── Content sections ────────────────────────────────────── */
-.content-section     { display: flex; align-items: center; gap: 2rem; margin-bottom: 3.5rem; }
+.content-section     { display: flex; align-items: center; gap: 2rem;  }
 .content-section.alt { flex-direction: row-reverse; }
 
 .text-content { flex: 0.8 1 0; align-self: flex-start; }
@@ -936,7 +936,6 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
     .km-guard-right { text-align: left; width: 100%; }
     .km-guard-cta { display: block; text-align: center; }
 
-    .content-section { margin-bottom: 2rem; }
 
     .client-logo-track {
         display: grid;
@@ -958,7 +957,6 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     .content-section {
         gap: 4rem;
-        margin-bottom: 5rem;
     }
 
     #key-metrics { padding: 3.5rem 4rem; }
