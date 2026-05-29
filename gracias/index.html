@@ -1,21 +1,89 @@
 <!DOCTYPE html>
-
 <html lang="es">
-<head>      
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias por Contactarnos - Transporte JGT y Timol</title>
-    <meta name="description" content="¡Gracias por ponerte en contacto con Transporte JGT y Timol! Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.">
+    <meta name="description" content="Recibimos tu mensaje. El equipo de Transporte JGT y Timol te responderá a la brevedad.">
     <link rel="canonical" href="https://www.transporte-jgt.com/gracias/" />
+    <link rel="icon" type="image/x-icon" href="../icons/jgt-2.webp">
+    <link rel="stylesheet" href="../css/main.css">
     <style>
-        :root {
-            color-scheme: light dark;
+        .thankyou-section {
+            min-height: calc(100dvh - var(--header-height) - 4rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+        }
+        .thankyou-card {
+            background: var(--color-surface);
+            border-top: 4px solid var(--color-primary);
+            max-width: 38rem;
+            width: 100%;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 6vw, 3.5rem);
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(10, 28, 63, 0.08);
+        }
+        .thankyou-icon {
+            width: 4.5rem;
+            height: 4.5rem;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+        }
+        .thankyou-icon svg {
+            width: 2.25rem;
+            height: 2.25rem;
+            stroke: var(--dark);
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .thankyou-card h1 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        .thankyou-card p {
+            color: var(--color-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0 0 2rem;
+        }
+        .thankyou-card .cta-button {
+            background: var(--color-accent);
+            margin-top: 0;
+        }
+        .thankyou-card .cta-button:hover {
+            background: var(--dark);
         }
     </style>
 </head>
-    <body>
-        <H1 style="text-align: center;">¡Gracias por Contactarnos!</H1>
+<body>
+    <div data-include="../templates/header.html"></div>
 
-     <p style="text-align: center;"> <a href="/" style="text-align: center;">Volver al inicio</a> </p>
-    </body>
+    <main id="main-content" role="main">
+        <section class="thankyou-section">
+            <div class="thankyou-card">
+                <div class="thankyou-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h1>¡Mensaje recibido!</h1>
+                <p>Gracias por contactarnos. Nuestro equipo revisará tu consulta y te responderá a la brevedad.</p>
+                <a href="/" class="cta-button">Volver al inicio</a>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="../templates/footer.html"></div>
+    <script src="../js/include.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
 </html>
