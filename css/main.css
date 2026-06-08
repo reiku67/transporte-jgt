@@ -13,7 +13,7 @@
     /* --color-primary: #8fbcde; */  /* azul polvo claro (powder) — más claro y aéreo */
 
     --color-accent:  #0c2a5e;   /* azul navy — títulos y barras */
-    --color-accent-light: #e3eef7; /* azul muy claro — hover de tarjetas */
+    --color-accent-light: #0a66bd; /* azul muy claro — hover de tarjetas */
     --color-link:    #0a66bd;   /* azul medio — enlaces y botones */
     --color-bg:      #eef1f6;   /* fondo con leve tinte frío */
     --color-surface: #ffffff;
@@ -545,7 +545,7 @@ article { display: block; }
     transition: background var(--t) var(--ease), color var(--t) var(--ease);
 }
 .service-card:is(:hover, :focus-within) .service-card-title,
-.vacante:is(:hover, :focus-within)      .vacante-title { background: var(--color-accent-light); color: var(--color-accent); }
+.vacante:is(:hover, :focus-within)      .vacante-title { background: var(--color-accent-light); color: white; }
 
 .services-cta-wrapper { margin: 1.25rem 0 3rem; text-align: center; }
 
@@ -553,14 +553,14 @@ article { display: block; }
 .btn,
 .cta-button {
     display: inline-flex;
-    align-items: center;
+    align-items: center;1
     justify-content: center;
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-    background: var(--color-link);
+    background: var(--color-accent);
     border: none;
     color: #fff;
-    box-shadow: 0 0.5rem 1.25rem rgba(10,102,189,0.28);
+    box-shadow: 0 0.5rem 1.25rem rgba(12,42,94,0.22);
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 700;
@@ -573,9 +573,9 @@ article { display: block; }
 }
 .btn:is(:hover, :focus-visible),
 .cta-button:is(:hover, :focus-visible) {
-    background: #094f96;
+    background: #143a7a;
     color: #fff;
-    box-shadow: 0 0.65rem 1.5rem rgba(22,160,217,0.42);
+    box-shadow: 0 0.65rem 1.5rem rgba(12,42,94,0.32);
     transform: translateY(-1px);
 }
 
