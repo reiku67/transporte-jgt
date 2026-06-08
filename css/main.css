@@ -302,6 +302,30 @@ article { display: block; }
     object-position: center;
 }
 
+/* ── Services pages (campamento / transporte) — refined look ─ */
+.services-page .band { padding: 4rem 0; }
+
+.services-page .content-section { gap: 3rem; }
+
+.services-page .image-content {
+    box-shadow: 0 20px 45px -20px rgba(10, 28, 63, 0.5);
+}
+
+.services-page .text-content h2 {
+    position: relative;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.1rem;
+}
+.services-page .text-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3.25rem;
+    height: 4px;
+    background: var(--color-primary);
+}
+
 /* ── Main title bar ──────────────────────────────────────── */
 .main-title {
     display: flex;
