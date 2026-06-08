@@ -486,15 +486,6 @@ article { display: block; }
 }
 
 .service-cards-container > article,
-.vacantes-grid > article {
-    display: flex;
-    flex-direction: column;
-}
-
-.service-cards-container > article > .service-card,
-.vacantes-grid > article > .vacante {
-    flex: 1;
-}
 
 .service-card,
 .vacante {
@@ -507,7 +498,7 @@ article { display: block; }
 .vacante img {
     display: block;
     width: 100%;
-    height: 13.75rem;
+    height: 12.75rem;
     object-fit: cover;
 }
    
