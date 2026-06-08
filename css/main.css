@@ -585,7 +585,7 @@ article { display: block; }
 /* ── Misc ────────────────────────────────────────────────── */
 .link-animated { color: var(--color-link); font-weight: 700; }
 
-.contact-list .icon i { color: var(--color-primary); font-size: 1.25em; }
+.contact-list .icon i { color: rgba(255,255,255,0.85); }
 
 .full-bleed-image {
     width: 100vw;
@@ -623,10 +623,10 @@ article { display: block; }
 .contact-list li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: rgba(255,255,255,0.92); }
 .contact-list a  { color: inherit; }
 .contact-list .icon {
-    flex: 0 0 2.125rem;
-    width: 2.125rem; height: 2.125rem;
+    flex: 0 0 1.5rem;
+    width: 1.5rem; height: 1.5rem;
     display: inline-flex; align-items: center; justify-content: center;
-    font-weight: 700;
+    font-size: 1.15rem;
 }
 .logos-col .footer-logos { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
 .footer-logos img { max-width: 8.75rem; opacity: 0.95; }
