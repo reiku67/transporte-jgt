@@ -986,10 +986,6 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
 
 
-    .service-card img,
-    .vacante img {
-        height: 18rem;
-    }
 }
 
 /* Extra large screens (≥ 1920px) */
