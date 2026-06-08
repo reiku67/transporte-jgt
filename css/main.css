@@ -984,9 +984,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         gap: 4rem;
     }
 
-    #key-metrics { padding: 6.5rem 4rem; }
-    #key-metrics-guard { padding: 6rem 4rem; }
-    #client-logos { padding: 6.5rem 4rem; margin: 1.5rem 0; }
+
 
     .service-card img,
     .vacante img {
