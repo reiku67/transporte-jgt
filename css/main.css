@@ -140,6 +140,13 @@ article { display: block; }
     gap: var(--gap);
 }
 .logos-left a { display: flex; align-items: center; }
+.logos-divider {
+    width: 1px;
+    height: 2rem;
+    background-color: var(--border-color, #ccc);
+    flex-shrink: 0;
+    align-self: center;
+}
 
 #logo1, #logo2 {
     height: 2.5rem;
