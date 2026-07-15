@@ -143,7 +143,7 @@ article { display: block; }
 .logos-divider {
     width: 1px;
     height: 2rem;
-    background-color: var(--border-color, #ccc);
+    background-color: var(--color-border);
     flex-shrink: 0;
     align-self: center;
 }
