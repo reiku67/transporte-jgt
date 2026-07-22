@@ -501,7 +501,7 @@ article { display: block; }
     overflow: hidden;
     margin: 1.5rem 0;
     padding: 3rem 2.5rem;
-    border-radius: 4px;
+
     background: var(--dark);
     color: #fff;
     box-shadow: 0 4px 12px rgba(6, 21, 40, 0.3);
