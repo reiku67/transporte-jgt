@@ -690,6 +690,8 @@ article { display: block; }
 
 /* ── Client logos ────────────────────────────────────────── */
 #client-logos {
+    background: #ffffff;
+    border: 1px solid rgba(17, 45, 100, 0.08);
     box-shadow: none;
     text-align: center;
     margin: 1.5rem 0;
@@ -700,14 +702,23 @@ article { display: block; }
     color: var(--color-accent);
     margin: 0 0 2rem;
 }
-
+#client-logos::before {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+}
 
 .client-logo-track {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2rem 1rem;
+    gap: 2rem 4rem;
 }
 .client-logo-track img {
     max-height: 4rem;
@@ -963,10 +974,6 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
 /* Tablet */
 @media (max-width: 56.25rem) {
-    body {
-        background: var(--color-surface);
-    }
-
     h1 { font-size: 2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
