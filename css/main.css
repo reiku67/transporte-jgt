@@ -974,6 +974,10 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
 /* Tablet */
 @media (max-width: 56.25rem) {
+    body {
+        background: var(--color-surface);
+    }
+
     h1 { font-size: 2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
