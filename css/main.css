@@ -707,7 +707,7 @@ article { display: block; }
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2rem 6rem;
+    gap: 2rem 1rem;
 }
 .client-logo-track img {
     max-height: 4rem;
