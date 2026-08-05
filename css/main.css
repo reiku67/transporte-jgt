@@ -47,6 +47,18 @@ abbr[title] {
     text-underline-offset: 0.2em;
 }
 
+html, body, * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+img, svg, video, canvas, picture {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
 body {
     background: var(--color-bg);
     color: var(--color-text);

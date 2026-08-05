@@ -65,8 +65,27 @@ function initMobileMenuToggle() {
 }
 
 // Init on DOM ready
+function disableCopyAndSelection() {
+  document.addEventListener('selectstart', function (e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  });
+  document.addEventListener('copy', function (e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  });
+  document.addEventListener('cut', function (e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  });
+  document.addEventListener('contextmenu', function (e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   document.body.classList.remove('preload');
+  disableCopyAndSelection();
   try { initMobileMenuToggle(); } catch (e) { /* noop */ }
 
   // progressive enhancement: swap hero image for video if provided
