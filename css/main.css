@@ -311,6 +311,7 @@ article { display: block; }
 /* ── Content sections ────────────────────────────────────── */
 .content-section     { display: flex; align-items: center; gap: 2rem;  }
 .content-section.alt { flex-direction: row-reverse; }
+#quienes-somos       { margin-bottom: 4rem; }
 
 .text-content { flex: 0.8 1 0; align-self: flex-start; }
 .text-content h1,
