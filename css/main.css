@@ -1150,8 +1150,9 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem 1.5rem;
-        align-items: center; 
-        justify-content: center
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
     }
 
 }
