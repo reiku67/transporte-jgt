@@ -736,13 +736,8 @@ article { display: block; }
     max-width: 130px;
     height: 80px;
     width: auto;
-    
     object-fit: contain;
-    opacity: 0.8;
 }
-
-
-.client-logo-track img:hover { opacity: 1; }
 
 
 /* ── Misc ────────────────────────────────────────────────── */
