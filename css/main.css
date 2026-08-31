@@ -7,23 +7,20 @@
     --gap:           1rem;
     --header-height: 4.375rem;
 
-    /* Color de acento — probá descomentando otra opción (dejá solo una activa) */
-    --color-primary: #5f9fca;   /* azul acero suave (activo) */
-    /* --color-primary: #6d8fb0; */  /* azul grisáceo (slate) — más apagado/sobrio */
-    /* --color-primary: #8fbcde; */  /* azul polvo claro (powder) — más claro y aéreo */
-
-    --color-accent:  #0c2a5e;   /* azul navy — títulos y barras */
-    --color-accent-light: #0a66bd; /* azul muy claro — hover de tarjetas */
-    --color-link:    #0a66bd;   /* azul medio — enlaces y botones */
-    --color-bg:      #eef1f6;   /* fondo con leve tinte frío */
+    /* Paleta base: azul discreto y sobrio, armonizado con navbar y footer */
+    --color-primary: #81a9d4;   /* azul claro pero más discreto */
+    --color-accent:  #183859;   /* azul profundo para títulos y barras */
+    --color-accent-light: #4479b1; /* azul medio para hover */
+    --color-link:    #2d6ea8;   /* enlaces y botones */
+    --color-bg:      #edf4fb;   /* fondo general muy suave */
     --color-surface: #ffffff;
     --color-text:    #495057;
     --color-muted:   #6c757d;
-    --color-heading: #1f2b3d;   /* gris-azulado oscuro */
-    --color-border:  #c3c3c3;
+    --color-heading: #1b2f45;   /* gris-azulado oscuro */
+    --color-border:  #c9d8ea;
 
-    --dark:          #061528;   /* azul muy oscuro (más profundo) */
-    --band-muted:    #eef1f6;
+    --dark:          #0d1f32;   /* azul muy oscuro, coincide con navbar/footer */
+    --band-muted:    #eaf3ff;   /* tono azul claro para secciones suaves */
 
     --ease:          cubic-bezier(0.6, 0, 0.2, 1);
     --t:             0.2s;
