@@ -10,13 +10,13 @@
     /* Paleta base: azul discreto y sobrio, armonizado con navbar y footer */
     --color-primary: #81a9d4;   /* azul claro pero más discreto */
     --color-accent:  #183859;   /* azul profundo para títulos y barras */
-    --color-accent-light: #4479b1; /* azul medio para hover */
+    --color-accent-light: #0a66bd; /* azul medio para hover */
     --color-link:    #2d6ea8;   /* enlaces y botones */
     --color-bg:      #edf4fb;   /* fondo general muy suave */
     --color-surface: #ffffff;
     --color-text:    #495057;
     --color-muted:   #6c757d;
-    --color-heading: #1b2f45;   /* gris-azulado oscuro */
+    --color-heading: #1f2b3d;   /* gris-azulado oscuro */
     --color-border:  #c9d8ea;
 
     --dark:          #0d1f32;   /* azul muy oscuro, coincide con navbar/footer */
