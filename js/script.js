@@ -83,10 +83,32 @@ function disableCopyAndSelection() {
   });
 }
 
+function initTopbarHide() {
+  const topbar = document.querySelector('.topbar');
+  if (!topbar) return;
+
+  if (topbar.dataset.topbarInit === '1') return;
+  topbar.dataset.topbarInit = '1';
+
+  let lastScrollY = window.scrollY;
+
+  function updateTopbarVisibility() {
+    const currentScrollY = window.scrollY;
+    const shouldHide = currentScrollY > lastScrollY && currentScrollY > 30;
+    document.body.classList.toggle('topbar-hidden', shouldHide);
+    topbar.classList.toggle('is-hidden', shouldHide);
+    lastScrollY = currentScrollY;
+  }
+
+  updateTopbarVisibility();
+  window.addEventListener('scroll', updateTopbarVisibility, { passive: true });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   document.body.classList.remove('preload');
   disableCopyAndSelection();
   try { initMobileMenuToggle(); } catch (e) { /* noop */ }
+  try { initTopbarHide(); } catch (e) { /* noop */ }
 
   // progressive enhancement: swap hero image for video if provided
   setTimeout(function () {
@@ -103,18 +125,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Re-init after include loader (if header is loaded asynchronously)
-document.addEventListener('includes:loaded', function () { try { initMobileMenuToggle(); } catch (e) { /* noop */ } });
+document.addEventListener('includes:loaded', function () {
+  try { initMobileMenuToggle(); } catch (e) { /* noop */ }
+  try { initTopbarHide(); } catch (e) { /* noop */ }
+});
 
 // MutationObserver fallback if header injected later
 (function () {
-  if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation')) {
-    try { initMobileMenuToggle(); } catch (e) { /* noop */ }
-    return;
-  }
   var mo = new MutationObserver(function () {
     if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation')) {
       try { initMobileMenuToggle(); } catch (e) { /* noop */ }
-      mo.disconnect();
+      if (document.querySelector('.topbar')) {
+        try { initTopbarHide(); } catch (e) { /* noop */ }
+      }
+      if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation') && document.querySelector('.topbar')) {
+        mo.disconnect();
+      }
     }
   });
   mo.observe(document.documentElement || document.body, { childList: true, subtree: true });

@@ -5,6 +5,7 @@
     --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
     --gap:           1rem;
+    --topbar-height: 2.5rem;
     --header-height: 4.375rem;
 
     /* Paleta más sobria y industrial: menos pastel, más confianza/empresa */
@@ -65,9 +66,14 @@ body {
     line-height: 1.7;
     margin: 0;
     overflow-x: hidden;
-    padding-top: var(--header-height);
+    padding-top: calc(var(--topbar-height) + var(--header-height));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: padding-top 0.2s ease;
+}
+
+body.topbar-hidden {
+    padding-top: var(--header-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -126,13 +132,65 @@ article { display: block; }
 :focus-visible { outline: 3px solid rgba(0,86,179,0.35); outline-offset: 3px; }
 
 /* ── Header ──────────────────────────────────────────────── */
+.topbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: var(--topbar-height);
+    background: linear-gradient(90deg, #0f6bb8 0%, #0b4f86 35%, #0b4b6a 100%);
+    color: #fff;
+    z-index: 1100;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.topbar.is-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    height: 100%;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+}
+
+.topbar-item svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    fill: #fff;
+    flex-shrink: 0;
+}
+
+.topbar-item a {
+    color: #fff;
+}
+
 .header {
     background: var(--dark);
     color: #fff;
     height: var(--header-height);
     position: fixed;
-    inset: 0 0 auto 0;
+    inset: var(--topbar-height) 0 auto 0;
     z-index: 1000;
+    transition: inset 0.22s ease;
+}
+
+body.topbar-hidden .header {
+    inset: 0 0 auto 0;
 }
 
 .header-container {
@@ -239,12 +297,16 @@ article { display: block; }
 /* ── Mobile nav overlay ──────────────────────────────────── */
 .mobile-nav-overlay {
     position: fixed;
-    inset: var(--header-height) 0 0 0;
+    inset: calc(var(--topbar-height) + var(--header-height)) 0 0 0;
     background: rgba(0,0,0,0.35);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.22s ease;
     z-index: 1098;
+}
+
+body.topbar-hidden .mobile-nav-overlay {
+    inset: var(--header-height) 0 0 0;
 }
 .mobile-nav-overlay.visible { opacity: 1; pointer-events: auto; }
 
@@ -259,32 +321,6 @@ article { display: block; }
     margin-bottom: 3.5rem;
 }
 .hero img { width: 100%; height: 100%; object-fit: cover; }
-
-.hero-whatsapp {
-    position: absolute;
-    bottom: 1.75rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-      text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
-    background: var(--dark);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    white-space: nowrap;
-    z-index: 2;
-}
-.hero-whatsapp svg {
-    width: 1.35rem;
-    height: 1.35rem;
-    fill: #fff;
-    flex-shrink: 0;
-}
-
 
 /* ── Bands ───────────────────────────────────────────────── */
 .band       { padding: 3rem 0; }
@@ -1010,8 +1046,8 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     .rulenav {
         position: fixed;
-        inset: var(--header-height) 0 0 0;
-        height: calc(100dvh - var(--header-height));
+        inset: calc(var(--topbar-height) + var(--header-height)) 0 0 0;
+        height: calc(100dvh - var(--topbar-height) - var(--header-height));
         background: VAR(--dark);
         display: flex;
         flex-direction: column;
@@ -1021,6 +1057,11 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         transform: translateY(-0.375rem) scale(0.995);
         transition: opacity var(--t) var(--ease), transform var(--t) var(--ease);
         z-index: 1100;
+    }
+
+    body.topbar-hidden .rulenav {
+        inset: var(--header-height) 0 0 0;
+        height: calc(100dvh - var(--header-height));
     }
     .rulenav.mobile-menu-open {
         opacity: 1;
