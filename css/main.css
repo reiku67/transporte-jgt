@@ -66,10 +66,9 @@ body {
     line-height: 1.7;
     margin: 0;
     overflow-x: hidden;
-    padding-top: calc(var(--topbar-height) + var(--header-height));
+    padding-top: var(--header-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: padding-top 0.2s ease;
 }
 
 body.topbar-hidden {
@@ -140,12 +139,10 @@ article { display: block; }
     color: #fff;
     z-index: 1100;
     box-shadow: 0 1px 0 rgba(255,255,255,0.08);
-    transition: transform 0.5s ease, opacity 0.22s ease;
 }
 
 .topbar.is-hidden {
-    transform: translateY(-100%);
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
@@ -184,13 +181,8 @@ article { display: block; }
     color: #fff;
     height: var(--header-height);
     position: fixed;
-    inset: var(--topbar-height) 0 auto 0;
-    z-index: 1000;
-    transition: inset 0.22s ease;
-}
-
-body.topbar-hidden .header {
     inset: 0 0 auto 0;
+    z-index: 1000;
 }
 
 .header-container {
