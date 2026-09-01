@@ -139,11 +139,15 @@ article { display: block; }
     color: #fff;
     z-index: 1100;
     box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    visibility: visible;
+    opacity: 1;
 }
 
 .topbar.is-hidden {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     pointer-events: none;
+    display: block;
 }
 
 .topbar-inner {
