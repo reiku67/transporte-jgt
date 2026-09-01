@@ -90,14 +90,13 @@ function initTopbarHide() {
   if (topbar.dataset.topbarInit === '1') return;
   topbar.dataset.topbarInit = '1';
 
-  let lastScrollY = window.scrollY;
-
   function updateTopbarVisibility() {
     const currentScrollY = window.scrollY;
-    const shouldHide = currentScrollY > lastScrollY && currentScrollY > 30;
-    document.body.classList.toggle('topbar-hidden', shouldHide);
+    const shouldHide = currentScrollY > 40;
+
+    topbar.style.display = shouldHide ? 'none' : 'block';
     topbar.classList.toggle('is-hidden', shouldHide);
-    lastScrollY = currentScrollY;
+    document.body.classList.toggle('topbar-hidden', shouldHide);
   }
 
   updateTopbarVisibility();
