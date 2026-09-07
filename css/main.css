@@ -1038,8 +1038,8 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         background: VAR(--dark);
         display: flex;
         flex-direction: column;
-        width: min(88vw, 24rem);
-        left: auto;
+        width: 100%;
+        left: 0;
         overflow-y: auto;
         opacity: 0;
         pointer-events: none;
