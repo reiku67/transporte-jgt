@@ -1,8 +1,4 @@
-/* Lightweight, robust mobile menu toggle
-   - Simple API: `setMobileMenuOpen(bool)` and `toggleMobileMenu()`
-   - Works when header is injected asynchronously (MutationObserver)
-   - Keeps ARIA attributes, overlay, and body locking in sync
-*/
+/* Lightweight, robust mobile menu toggle. */
 
 function initMobileMenuToggle() {
   const mobileBtn = document.getElementById('mobile-menu-button');
@@ -122,28 +118,3 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (err) { /* ignore */ }
   }, 2000);
 });
-
-// Re-init after include loader (if header is loaded asynchronously)
-document.addEventListener('includes:loaded', function () {
-  try { initMobileMenuToggle(); } catch (e) { /* noop */ }
-  try { initTopbarHide(); } catch (e) { /* noop */ }
-});
-
-// MutationObserver fallback if header injected later
-(function () {
-  var mo = new MutationObserver(function () {
-    if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation')) {
-      try { initMobileMenuToggle(); } catch (e) { /* noop */ }
-      if (document.querySelector('.topbar')) {
-        try { initTopbarHide(); } catch (e) { /* noop */ }
-      }
-      if (document.getElementById('mobile-menu-button') && document.getElementById('main-navigation') && document.querySelector('.topbar')) {
-        mo.disconnect();
-      }
-    }
-  });
-  mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
-})();
-
-/* Helper: if the menu still doesn't behave, open devtools and check
-   for JS errors that stop execution before this file runs. */

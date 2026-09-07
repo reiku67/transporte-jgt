@@ -1002,19 +1002,6 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 #como-postular { text-align: center; padding: 1.25rem; margin-top: 3rem; border: 1px solid var(--color-border); }
 #como-postular p { max-width: 43.75rem; margin-inline: auto; }
 
-/* ── data-include transitions (prevents FOUC) ────────────── */
-[data-include] {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-[data-include].include-ready {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: opacity 180ms ease;
-}
-
 /* ── Responsive ──────────────────────────────────────────── */
 
 /* Tablet */
@@ -1051,6 +1038,8 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         background: VAR(--dark);
         display: flex;
         flex-direction: column;
+        width: min(88vw, 24rem);
+        left: auto;
         overflow-y: auto;
         opacity: 0;
         pointer-events: none;
