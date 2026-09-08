@@ -561,23 +561,45 @@ body.topbar-hidden .mobile-nav-overlay {
 
 @media (max-width: 600px) {
     .service-hero {
-        padding-top: 3rem;
+        padding: 2.35rem 0 1.5rem;
     }
 
     .service-hero__content h1 {
-        font-size: clamp(2.6rem, 16vw, 4.1rem);
+        font-size: clamp(2.45rem, 13vw, 3.5rem);
+        line-height: 0.96;
+        margin-bottom: 1.1rem;
+    }
+
+    .eyebrow {
+        font-size: 0.66rem;
+        letter-spacing: 0.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-hero__content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-actions {
+        gap: 0.7rem;
+        margin-top: 1.5rem;
     }
 
     .service-hero__item {
-        min-height: 3.8rem;
+        min-height: 3.25rem;
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        gap: 0.75rem;
     }
 
     .service-hero__item span:last-child {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .btn {
         width: 100%;
+        min-height: 3rem;
+        padding: 0.75rem 1rem;
     }
 }
 
