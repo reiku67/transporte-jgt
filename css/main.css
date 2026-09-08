@@ -135,7 +135,7 @@ article { display: block; }
     position: fixed;
     inset: 0 0 auto 0;
     height: var(--topbar-height);
-    background: linear-gradient(90deg, #0f6bb8 0%, #0b4f86 35%, #0b4b6a 100%);
+    background: #0f6bb8;
     color: #fff;
     z-index: 1100;
     box-shadow: 0 1px 0 rgba(255,255,255,0.08);
