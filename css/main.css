@@ -367,7 +367,7 @@ body.topbar-hidden .mobile-nav-overlay {
 }
 
 .service-hero {
-    background: linear-gradient(90deg, #091b2a 0%, #0e2239 100%);
+    background: #091b2a;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 4.25rem 0 2.5rem;
 }
