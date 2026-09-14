@@ -620,12 +620,12 @@ body.topbar-hidden .mobile-nav-overlay {
 
 /* ── Key metrics ─────────────────────────────────────────── */
 #key-metrics {
-    background: #ffffff;
-    border: 1px solid rgba(17, 45, 100, 0.08);
+    background: transparent;
+    border: none;
     box-shadow: none;
     color: var(--color-accent);
-    margin: 3rem 0 0;
-    padding: 3rem 2.5rem;
+    margin: 0;
+    padding: 3rem 0 0;
     position: relative;
 }
 #coverage { margin-top: 3rem; }
@@ -676,12 +676,13 @@ body.topbar-hidden .mobile-nav-overlay {
 
 /* ── Guardia activa ─────────────────────────────────────── */
 #key-metrics-guard {
-    background: #ffffff;
+    background: transparent;
     color: var(--color-accent);
-    margin: 1.5rem 0;
-    padding: 3rem 2.5rem;
-    border: 1px solid rgba(17, 45, 100, 0.08);
+    margin: 0;
+    padding: 3.5rem 0;
+    border: none;
     box-shadow: none;
+    border-bottom: 1px solid var(--color-border);
 }
 .km-guard-inner {
     display: flex;
@@ -760,12 +761,19 @@ body.topbar-hidden .mobile-nav-overlay {
 #fleet-tracking {
     position: relative;
     overflow: hidden;
-    margin: 1.5rem 0;
-    padding: 3rem 2.5rem;
+    margin: 3rem 0 0;
+    padding: 4rem 0;
 
     background: var(--dark);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(6, 21, 40, 0.3);
+    box-shadow: none;
+}
+/* contenedor interno de la banda */
+#fleet-tracking .fleet-inner {
+    width: 100%;
+    max-width: 130rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 3.5rem);
 }
 /* Sutil grilla técnica de fondo */
 .fleet-grid-bg {
@@ -952,12 +960,12 @@ body.topbar-hidden .mobile-nav-overlay {
 
 /* ── Client logos ────────────────────────────────────────── */
 #client-logos {
-    background: #ffffff;
-    border: 1px solid rgba(17, 45, 100, 0.08);
+    background: transparent;
+    border: none;
     box-shadow: none;
     text-align: center;
-    margin: 1.5rem 0;
-    padding: 3rem 2.5rem;
+    margin: 0;
+    padding: 3.5rem 0 4rem;
 }
 #client-logos h2 {
     font-size: clamp(1.4rem, 2.6vw, 1.85rem);
@@ -1353,10 +1361,10 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     .main-title { font-size: 1.55rem; padding: 0.8rem 1rem; }
 
-    #key-metrics { padding: 2rem 1.5rem; margin: 1.5rem 0 0; }
-    #key-metrics-guard { padding: 2rem 1.5rem; margin: 1.25rem 0; }
+    #key-metrics { padding: 2rem 0 0; margin: 0; }
+    #key-metrics-guard { padding: 2rem 0; margin: 0; }
 
-    #fleet-tracking { padding: 2.5rem 1.5rem; margin: 1.25rem 0; }
+    #fleet-tracking { padding: 2.5rem 0; margin: 2rem 0 0; }
     .fleet-head { margin-bottom: 1.5rem; }
     .fleet-cards { grid-template-columns: 1fr; gap: 0.75rem; }
     .fleet-card {
@@ -1374,7 +1382,7 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         grid-row: span 2;
     }
     .fleet-card h3 { margin-bottom: 0.2rem; }
-    #client-logos { padding: 2rem 1.5rem; margin: 1.25rem 0; }
+    #client-logos { padding: 2rem 0; margin: 0; }
 
     .km-guard-inner {
         flex-direction: column;
@@ -1434,9 +1442,9 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #key-metrics { padding: 8rem 5rem; }
-    #key-metrics-guard { padding: 4rem 5rem; }
-    #client-logos { padding: 6rem 5rem; }
+    #key-metrics { padding: 8rem 0 0; }
+    #key-metrics-guard { padding: 4rem 0; }
+    #client-logos { padding: 6rem 0; }
 
     .cta-button, .btn {
         font-size: 1.1rem;
