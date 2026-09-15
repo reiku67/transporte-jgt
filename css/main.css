@@ -995,6 +995,10 @@ body.topbar-hidden .mobile-nav-overlay {
     height: 5.5rem;
     object-fit: contain;
 }
+.client-logo-track .logo-slb,
+.client-logo-track .logo-cws {
+    filter: grayscale(1) brightness(0);
+}
 
 
 /* ── Misc ────────────────────────────────────────────────── */
