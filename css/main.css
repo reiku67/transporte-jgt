@@ -982,17 +982,17 @@ body.topbar-hidden .mobile-nav-overlay {
 }
 
 .client-logo-track {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    display: flex;
     align-items: center;
-    justify-items: center;
-    gap: 2.5rem 3rem;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 4.5rem);
     width: 100%;
 }
 .client-logo-track img {
-    max-width: 100%;
-    width: auto;
-    height: 80px;
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 12.5rem;
+    height: 5.5rem;
     object-fit: contain;
 }
 
