@@ -29,12 +29,12 @@ DESPUÉS:
         background: transparent;
         color: var(--color-accent);
         margin: 0;
-        padding: 4rem 0 3rem;
+        padding: 7.5rem 0 5.5rem;
         border: none;
         box-shadow: none;
     }
 
-### b) Reemplazar la regla `.km-guard-inner` y borrar su `::before`
+### b) Centrar Guardia y agrandar su título (para que combine con Clientes)
 
 ANTES:
 
@@ -58,39 +58,116 @@ ANTES:
 DESPUÉS (la regla `::before` se elimina por completo):
 
     .km-guard-inner {
-        position: relative;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 2.5rem;
-        text-align: left;
+        text-align: center;
     }
 
-### c) Agregar la banda blanca de ancho completo
+Y además:
+
+    .km-guard-left  { flex: none; }
+    .km-guard-text  { max-width: 60ch; font-size: 1.15rem; line-height: 1.65; margin: 0; }
+
+    .km-guard-title {
+        font-size: clamp(1.9rem, 3.8vw, 3rem);
+        margin: 0 0 0.8rem;
+    }
+
+    /* mismo tamaño de título que Guardia, están en la misma banda */
+    #client-logos h2 {
+        font-size: clamp(1.9rem, 3.8vw, 3rem);
+        margin: 0 0 2.5rem;
+    }
+
+### c) Más aire vertical en Métricas y Clientes
+
+Las secciones quedaban achatadas. Reemplazar el `padding` de estas dos reglas:
+
+ANTES:
+
+    #key-metrics { padding: 3rem 0 0; }
+    #client-logos { padding: 3.5rem 0 4rem; }
+
+DESPUÉS:
+
+    #key-metrics { padding: 5rem 0 4rem; }
+    #client-logos { padding: 1.5rem 0 6.5rem; }
+
+(`#client-logos` arranca con poco padding arriba porque Guardia, que está justo encima
+en la misma banda blanca, ya aporta 4.5rem de separación.)
+
+### d) Que los logos de clientes ocupen todo el ancho
+
+Hoy el track es un flex centrado, así que los logos quedan apretados en el medio.
+Pasarlo a grid para que se repartan de lado a lado.
+
+ANTES:
+
+    .client-logo-track {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem 4rem;
+    }
+    .client-logo-track img {
+        max-width: 130px;
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+    }
+
+DESPUÉS:
+
+    .client-logo-track {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+        align-items: center;
+        justify-items: center;
+        gap: 2.5rem 3rem;
+        width: 100%;
+    }
+    .client-logo-track img {
+        max-width: 100%;
+        width: auto;
+        height: 80px;
+        object-fit: contain;
+    }
+
+### e) Agregar la banda blanca de ancho completo
 
 Agregar esta regla (por ejemplo junto al bloque `/* ── Bands ── */`):
 
     .band-surface { background: var(--color-surface); }
 
-### d) Responsive: dentro de `@media (max-width: 37.5rem)`
+### f) Responsive: dentro de `@media (max-width: 37.5rem)`
 
 ANTES:
 
+    #key-metrics { padding: 2rem 0 0; margin: 0; }
     #key-metrics-guard { padding: 2rem 0; margin: 0; }
+    #client-logos { padding: 2rem 0; margin: 0; }
 
 DESPUÉS:
 
-    #key-metrics-guard { padding: 2.5rem 0 1.5rem; margin: 0; }
+    #key-metrics { padding: 3rem 0 2.5rem; margin: 0; }
+    #key-metrics-guard { padding: 3.5rem 0 2.5rem; margin: 0; }
+    #client-logos { padding: 1rem 0 4rem; margin: 0; }
 
-### e) Responsive: dentro de `@media (min-width: 120rem)`
+### g) Responsive: dentro de `@media (min-width: 120rem)`
 
 ANTES:
 
+    #key-metrics { padding: 8rem 0 0; }
     #key-metrics-guard { padding: 4rem 0; }
+    #client-logos { padding: 6rem 0; }
 
 DESPUÉS:
 
-    #key-metrics-guard { padding: 5rem 0 3.5rem; }
+    #key-metrics { padding: 8rem 0 5rem; }
+    #key-metrics-guard { padding: 7rem 0 5rem; }
+    #client-logos { padding: 2rem 0 8rem; }
 
 ---
 
@@ -131,3 +208,28 @@ El home queda como una secuencia de bandas que llegan al borde de la pantalla:
 
 Las secciones ya no parecen tarjetas sueltas: cada cambio de sección se lee como un
 cambio de color de borde a borde, no como un recuadro.
+
+
+---
+
+## 3) Logos de clientes — exactamente como se ven en la preview
+
+En la preview se usan los mismos archivos que ya están en `logos/` del repo, sin ningún
+filtro de color, en este orden y con este markup:
+
+    <div class="client-logo-track">
+        <img src="logos/flowback.webp" alt="Logo Flowback Consulting Services" width="200" height="99" loading="lazy">
+        <img src="logos/slb.svg"       alt="Logo SLB">
+        <img src="logos/naborss.png"   alt="Logo Nabors">
+        <img src="logos/phoenix.webp"  alt="Logo Phoenix Global Resources" width="220" height="38" loading="lazy">
+        <img src="logos/cws.svg"       alt="Logo CWS CalFrac" width="90" height="108" loading="lazy">
+        <img src="logos/tacker.webp"   alt="Logo Tacker" width="180" height="73" loading="lazy">
+    </div>
+
+Es el mismo markup que ya tiene `index.html` (no hay que cambiarlo).
+Los estilos son los del punto 1.d (grid `auto-fit`).
+
+Si en el sitio publicado los logos se ven de otro color, NO viene de estas reglas:
+no hay ningún `filter`, `grayscale` ni `opacity` aplicado a `.client-logo-track img`
+en `css/main.css`. Revisar en ese caso que los archivos servidos en producción sean
+los mismos que están hoy en la carpeta `logos/` (puede haber una versión vieja cacheada).
