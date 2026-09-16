@@ -1017,7 +1017,7 @@ body.topbar-hidden .mobile-nav-overlay {
 /* ── Footer ──────────────────────────────────────────────── */
 .footer {
     --pointer-x: 50%;
-    --pointer-y: 50%;
+    --pointer-y: 62%;
     position: relative;
     isolation: isolate;
     background: var(--dark);
@@ -1039,7 +1039,7 @@ body.topbar-hidden .mobile-nav-overlay {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 32%);
+    background: radial-gradient(circle at 50% 62%, rgba(255,255,255,0.04), transparent 32%);
     pointer-events: none;
     z-index: 0;
 }

@@ -115,7 +115,7 @@ function initCursorGlow() {
   };
 
   footer.style.setProperty('--pointer-x', '50%');
-  footer.style.setProperty('--pointer-y', '50%');
+  footer.style.setProperty('--pointer-y', '62%');
 
   window.addEventListener('pointermove', function (event) {
     setGlowFromPointer(event.clientX, event.clientY);
@@ -123,7 +123,7 @@ function initCursorGlow() {
 
   window.addEventListener('pointerleave', function () {
     footer.style.setProperty('--pointer-x', '50%');
-    footer.style.setProperty('--pointer-y', '50%');
+    footer.style.setProperty('--pointer-y', '62%');
   }, { passive: true });
 }
 
