@@ -103,6 +103,9 @@ function initCursorGlow() {
   const footer = document.querySelector('.footer');
   if (!footer) return;
 
+  let pendingFrame = 0;
+  let pendingPosition = null;
+
   const setGlowFromPointer = function (clientX, clientY) {
     const rect = footer.getBoundingClientRect();
     const width = Math.max(rect.width, 1);
@@ -110,8 +113,20 @@ function initCursorGlow() {
     const x = ((clientX - rect.left) / width) * 100;
     const y = ((clientY - rect.top) / height) * 100;
 
-    footer.style.setProperty('--pointer-x', Math.min(Math.max(x, 0), 100) + '%');
-    footer.style.setProperty('--pointer-y', Math.min(Math.max(y, 0), 100) + '%');
+    pendingPosition = {
+      x: Math.min(Math.max(x, 0), 100),
+      y: Math.min(Math.max(y, 0), 100)
+    };
+
+    if (pendingFrame) return;
+    pendingFrame = window.requestAnimationFrame(function () {
+      if (pendingPosition) {
+        footer.style.setProperty('--pointer-x', pendingPosition.x + '%');
+        footer.style.setProperty('--pointer-y', pendingPosition.y + '%');
+      }
+      pendingPosition = null;
+      pendingFrame = 0;
+    });
   };
 
   footer.style.setProperty('--pointer-x', '50%');
