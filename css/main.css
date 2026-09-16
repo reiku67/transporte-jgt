@@ -1029,7 +1029,7 @@ body.topbar-hidden .mobile-nav-overlay {
     content: "";
     position: absolute;
     inset: -18%;
-    background: radial-gradient(circle at 50% 62%, rgba(156, 197, 255, 0.13), rgba(107, 145, 255, 0.06) 12%, rgba(107, 145, 255, 0.02) 26%, transparent 42%);
+    background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(156, 197, 255, 0.13), rgba(107, 145, 255, 0.06) 12%, rgba(107, 145, 255, 0.02) 26%, transparent 42%);
     opacity: 0.7;
     pointer-events: none;
     z-index: 0;
