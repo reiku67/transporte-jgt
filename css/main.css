@@ -691,7 +691,7 @@ body.topbar-hidden .mobile-nav-overlay {
     align-items: center;
     text-align: center;
 }
-.km-guard-left  { flex: none; }
+.km-guard-left  { flex: none; width: 100%; text-align: center; }
 .km-guard-text  { max-width: 60ch; font-size: 1.15rem; line-height: 1.65; margin: 0; }
 
 .km-guard-eyebrow {
@@ -728,7 +728,7 @@ body.topbar-hidden .mobile-nav-overlay {
     color: var(--color-text);
     font-size: 1.15rem;
     line-height: 1.65;
-    margin: 0;
+    margin: 0 auto;
 }
 .km-guard-phone {
     display: block;
