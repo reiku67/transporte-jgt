@@ -1442,6 +1442,11 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
 }
 
+/* El brillo dinámico necesita más superficie para mantenerse estable. */
+@media (max-width: 75rem) {
+    .footer::before { display: none; }
+}
+
 /* Large screens (≥ 1440px) */
 @media (min-width: 90rem) {
     body { font-size: 1.2rem; }
