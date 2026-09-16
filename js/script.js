@@ -105,21 +105,23 @@ function initCursorGlow() {
 
   const setGlowFromPointer = function (clientX, clientY) {
     const rect = footer.getBoundingClientRect();
-    const x = ((clientX - rect.left) / rect.width) * 100;
-    const y = ((clientY - rect.top) / rect.height) * 100;
+    const width = Math.max(rect.width, 1);
+    const height = Math.max(rect.height, 1);
+    const x = ((clientX - rect.left) / width) * 100;
+    const y = ((clientY - rect.top) / height) * 100;
 
-    footer.style.setProperty('--pointer-x', x + '%');
-    footer.style.setProperty('--pointer-y', y + '%');
+    footer.style.setProperty('--pointer-x', Math.min(Math.max(x, 0), 100) + '%');
+    footer.style.setProperty('--pointer-y', Math.min(Math.max(y, 0), 100) + '%');
   };
 
-  footer.addEventListener('pointermove', function (event) {
+  window.addEventListener('pointermove', function (event) {
     setGlowFromPointer(event.clientX, event.clientY);
-  });
+  }, { passive: true });
 
-  footer.addEventListener('pointerleave', function () {
+  window.addEventListener('mouseleave', function () {
     footer.style.setProperty('--pointer-x', '50%');
     footer.style.setProperty('--pointer-y', '50%');
-  });
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
