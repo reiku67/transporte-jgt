@@ -1270,6 +1270,9 @@ label[for="human-check"] { margin: 0; font-weight: 500; cursor: pointer; }
 
     .hero { height: clamp(260px, 78vh, 560px); }
 
+    .footer::before,
+    .footer::after { display: none; }
+
     html { scroll-padding-top: calc(var(--header-height) + 0.9375rem) !important; }
     #logo1, #logo2 { height: 2.1875rem; max-width: 7.5rem; }
     .logos-left { flex-grow: 1; gap: 0.5rem; }
