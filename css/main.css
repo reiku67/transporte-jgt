@@ -1015,7 +1015,30 @@ body.topbar-hidden .mobile-nav-overlay {
 }
 
 /* ── Footer ──────────────────────────────────────────────── */
-.footer { background: var(--dark); color: #fff; padding: 4.5rem 0 1.5rem; }
+.footer {
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    position: relative;
+    isolation: isolate;
+    background: var(--dark);
+    color: #fff;
+    padding: 4.5rem 0 1.5rem;
+    overflow: hidden;
+}
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(156, 197, 255, 0.26), rgba(107, 145, 255, 0.12) 12%, rgba(107, 145, 255, 0.04) 26%, transparent 42%);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.18s ease-out;
+}
+.footer .container {
+    position: relative;
+    z-index: 1;
+}
 .footer p,
 .footer small { color: rgba(255,255,255,0.55); font-size: inherit; }
 .footer h3    { color: #fff; font-size: 1.05rem; margin: 0 0 1.25rem; letter-spacing: 0.04em; }

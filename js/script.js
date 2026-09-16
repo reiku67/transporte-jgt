@@ -99,11 +99,35 @@ function initTopbarHide() {
   window.addEventListener('scroll', updateTopbarVisibility, { passive: true });
 }
 
+function initCursorGlow() {
+  const footer = document.querySelector('.footer');
+  if (!footer) return;
+
+  const setGlowFromPointer = function (clientX, clientY) {
+    const rect = footer.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    const y = ((clientY - rect.top) / rect.height) * 100;
+
+    footer.style.setProperty('--pointer-x', x + '%');
+    footer.style.setProperty('--pointer-y', y + '%');
+  };
+
+  footer.addEventListener('pointermove', function (event) {
+    setGlowFromPointer(event.clientX, event.clientY);
+  });
+
+  footer.addEventListener('pointerleave', function () {
+    footer.style.setProperty('--pointer-x', '50%');
+    footer.style.setProperty('--pointer-y', '50%');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   document.body.classList.remove('preload');
   disableCopyAndSelection();
   try { initMobileMenuToggle(); } catch (e) { /* noop */ }
   try { initTopbarHide(); } catch (e) { /* noop */ }
+  try { initCursorGlow(); } catch (e) { /* noop */ }
 
   // progressive enhancement: swap hero image for video if provided
   setTimeout(function () {
