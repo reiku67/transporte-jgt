@@ -114,11 +114,14 @@ function initCursorGlow() {
     footer.style.setProperty('--pointer-y', Math.min(Math.max(y, 0), 100) + '%');
   };
 
+  footer.style.setProperty('--pointer-x', '50%');
+  footer.style.setProperty('--pointer-y', '50%');
+
   window.addEventListener('pointermove', function (event) {
     setGlowFromPointer(event.clientX, event.clientY);
   }, { passive: true });
 
-  window.addEventListener('mouseleave', function () {
+  window.addEventListener('pointerleave', function () {
     footer.style.setProperty('--pointer-x', '50%');
     footer.style.setProperty('--pointer-y', '50%');
   }, { passive: true });
