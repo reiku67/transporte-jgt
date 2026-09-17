@@ -458,12 +458,12 @@ body.topbar-hidden .mobile-nav-overlay {
     gap: 1.25rem;
     min-height: 4.4rem;
     padding: 0.25rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    color: #eef2f6;
+    border-top: 1px solid rgba(25, 39, 52, 0.14);
+    color: var(--color-heading);
 }
 
 .service-hero__item:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(25, 39, 52, 0.14);
 }
 
 .service-index {
@@ -471,7 +471,7 @@ body.topbar-hidden .mobile-nav-overlay {
     font-size: 0.92rem;
     font-weight: 700;
     letter-spacing: 0.14rem;
-    color: rgba(228, 233, 239, 0.6);
+    color: rgba(27, 42, 54, 0.68);
 }
 
 .service-hero__item span:last-child {
@@ -479,10 +479,11 @@ body.topbar-hidden .mobile-nav-overlay {
     font-size: clamp(1.7rem, 2.2vw, 2.25rem);
     font-weight: 700;
     line-height: 1.2;
+    color: var(--color-heading);
 }
 
 .service-gallery {
-    background: #0d1c2d;
+    background: var(--band-muted);
     padding: 0 0 3.5rem;
 }
 
@@ -512,7 +513,7 @@ body.topbar-hidden .mobile-nav-overlay {
 .services-page .band-muted,
 .services-page .band-accent,
 .services-page .band-dark {
-    background: var(--band-muted);
+    background: #fff;
     color: var(--color-text);
     padding: clamp(2.75rem, 5vw, 4.5rem) 0;
 }
