@@ -458,12 +458,12 @@ body.topbar-hidden .mobile-nav-overlay {
     gap: 1.25rem;
     min-height: 4.4rem;
     padding: 0.25rem 0;
-    border-top: 1px solid rgba(25, 39, 52, 0.14);
-    color: var(--color-heading);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(239, 243, 247, 0.85);
 }
 
 .service-hero__item:last-child {
-    border-bottom: 1px solid rgba(25, 39, 52, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .service-index {
@@ -471,7 +471,7 @@ body.topbar-hidden .mobile-nav-overlay {
     font-size: 0.92rem;
     font-weight: 700;
     letter-spacing: 0.14rem;
-    color: rgba(27, 42, 54, 0.68);
+    color: rgba(223, 230, 236, 0.52);
 }
 
 .service-hero__item span:last-child {
@@ -479,7 +479,7 @@ body.topbar-hidden .mobile-nav-overlay {
     font-size: clamp(1.7rem, 2.2vw, 2.25rem);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--color-heading);
+    color: rgba(246, 249, 252, 0.92);
 }
 
 .service-gallery {
