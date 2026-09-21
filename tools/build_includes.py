@@ -10,6 +10,7 @@ PAGES = [
     ROOT / "transporte/index.html",
     ROOT / "rental/index.html",
     ROOT / "mecanica/index.html",
+    ROOT / "metalurgica/index.html",
     ROOT / "contacto/index.html",
     ROOT / "empleos/index.html",
     ROOT / "gracias/index.html",
