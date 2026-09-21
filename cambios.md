@@ -1,129 +1,198 @@
-# Cambios — páginas de servicios con fondo homogéneo
+# Cambios — página Rental (4b: franja + listado)
 
-## Contexto
+Reemplaza el `<main>` de `rental/index.html` y agrega un bloque nuevo al final de `css/main.css`.
+No se toca el header, la topbar, el footer, ni ninguna otra página. El `<head>` queda igual.
 
-Las páginas de servicios alternaban bandas claras y navy: `band-muted` → `band-accent` → `band-muted` → footer navy. El objetivo es que los servicios queden sobre un solo fondo continuo. El hero azul no se toca.
+Resumen:
 
-Afecta a las tres páginas que usan `class="services-page"` en su `<main>`:
+- **Paso 1** — `css/main.css`: agregar el bloque `Rental` al final del archivo.
+- **Paso 2** — `rental/index.html`: reemplazar todo el `<main>…</main>` por el markup nuevo.
+- **Paso 3** (opcional) — revisar que `.services-page` no le meta fondo gris.
 
-| Página | Bandas que tiene hoy |
-|---|---|
-| `transporte/index.html` | `band-muted` (+`pt-20 pb-50`), `band-accent`, `band-muted` |
-| `rental/index.html` | `band-muted`, `band-accent`, `band-muted`, `band-dark`, … |
-| `mecanica/index.html` | solo `band-muted` (no cambia visualmente, pero hereda el espaciado nuevo) |
-
-`empleos/index.html` también usa `band-accent`, pero su `<main>` no es `.services-page`: **queda igual**.
-
-## Resumen
-
-- Obligatorio: **2 ediciones en `css/main.css`** (pasos 1 y 2). Con eso las tres páginas quedan listas.
-- Recomendado: **1 edición más en `css/main.css`** (paso 3, la sombra de las imágenes).
-- Opcional: **limpieza del HTML** (paso 4). No cambia nada visual, solo evita confusión a futuro.
-
-Lo que **no** se modifica: el hero `.service-hero`, la lista 01–06, el botón `.btn` / `.btn-light`, la barra de acento bajo cada `h2`, el header, la topbar y el footer.
+Qué cambia visualmente: desaparecen las cinco bandas alternadas con párrafos largos. Queda la barra navy de siempre, una franja de cinco fotos a lo ancho, y debajo una intro corta a la izquierda con el listado numerado 01–05 a la derecha. Se eliminan los bloques "Características", "Seguridad industrial", "Especificaciones LED" e "Incluye".
 
 ---
 
-## Paso 1 — fondo de la página (obligatorio)
+## Paso 1 — CSS
 
-`css/main.css`, línea ~368, sección *Services pages*:
+Pegar al final de `css/main.css`:
 
 ```css
-/* ANTES */
-.services-page {
-    background: #0d1c2d;
+/* ── Rental: franja panorámica + listado ─────────────────── */
+.rental-page { background: var(--color-surface); }
+
+.rental-strip {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    background: var(--color-border);
 }
 
-/* DESPUÉS */
-.services-page {
-    background: var(--band-muted);
+.rental-strip img {
+    width: 100%;
+    height: 14.375rem;
+    object-fit: cover;
+    display: block;
+}
+
+.rental-body {
+    padding: clamp(2.75rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 4.75rem);
+}
+
+.rental-body__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+}
+
+.rental-lead {
+    color: var(--color-heading);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+}
+
+.rental-intro p { margin-bottom: 1.5rem; }
+
+.rental-item {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.125rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.rental-item:last-child { border-bottom: 1px solid var(--color-border); }
+
+.rental-item .service-index {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    padding-top: 0.5rem;
+}
+
+.rental-item h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+    margin: 0 0 0.3rem;
+}
+
+.rental-item p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    .rental-body__inner { grid-template-columns: 1fr; }
+    .rental-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .rental-strip img { height: 10rem; }
+    .rental-strip img:last-child { grid-column: span 2; }
+}
+
+@media (max-width: 37.5rem) {
+    .rental-strip img { height: 8rem; }
+    .rental-item {
+        grid-template-columns: 2.25rem minmax(0, 1fr);
+        gap: 0.75rem;
+    }
 }
 ```
 
-Esto es lo que se ve entre bandas y detrás del contenido. Si queda navy, se filtra en los bordes.
+`.rental-item .service-index` pisa a propósito el `.service-index` del hero de servicios, que está pensado para fondo oscuro (`rgba(223,230,236,.52)`) y sobre blanco quedaría invisible.
 
-## Paso 2 — anular la alternancia de bandas (obligatorio)
+## Paso 2 — HTML
 
-`css/main.css`, línea ~509. **Hoy es una sola línea:**
+En `rental/index.html`, reemplazar desde `<main class="services-page">` hasta `</main>` por:
 
-```css
-/* ANTES */
-.services-page .band { padding: 4rem 0; }
+```html
+    <main id="main-content" role="main" class="services-page rental-page">
+        <h1 class="main-title">Equipos para Campamentos</h1>
+
+        <div class="rental-strip">
+            <img src="../img/vivienda.jpg" alt="Trailers vivienda preparados para campamentos" width="800" height="600" loading="lazy">
+            <img src="../img/vigilancia.jpg" alt="Cabina de vigilancia para seguridad perimetral en locación petrolera" width="800" height="600" loading="lazy">
+            <img src="../img/luminarias12.jpeg" alt="Torres de iluminación LED para operaciones petroleras nocturnas" width="800" height="600" loading="lazy">
+            <img src="../img/TABLERO ELECTRICO.jpeg" alt="Tableros eléctricos industriales para campamentos e instalaciones petroleras" width="800" height="600" loading="lazy">
+            <img src="../img/bc-2.webp" alt="Medición profesional de puesta a tierra en instalaciones petroleras" width="800" height="600" loading="lazy">
+        </div>
+
+        <section class="rental-body" aria-labelledby="rental-listado">
+            <div class="container rental-body__inner">
+                <div class="rental-intro">
+                    <p class="rental-lead">Alquiler de equipamiento para operaciones en campo.</p>
+                    <p>Coordinamos cada equipo según el requerimiento de la locación: entrega, instalación y retiro.</p>
+                    <a href="/contacto/" class="cta-button">Consultar disponibilidad</a>
+                </div>
+
+                <div class="rental-list">
+                    <h2 id="rental-listado" class="hidden">Equipos disponibles</h2>
+
+                    <article class="rental-item">
+                        <span class="service-index">01</span>
+                        <div>
+                            <h2>Trailers vivienda</h2>
+                            <p>Módulos habitacionales completos para locaciones remotas.</p>
+                        </div>
+                    </article>
+
+                    <article class="rental-item">
+                        <span class="service-index">02</span>
+                        <div>
+                            <h2>Cabinas de vigilancia</h2>
+                            <p>Puestos de control para accesos y perímetros.</p>
+                        </div>
+                    </article>
+
+                    <article class="rental-item">
+                        <span class="service-index">03</span>
+                        <div>
+                            <h2>Luminarias</h2>
+                            <p>Iluminación LED y halógena para operación 24/7.</p>
+                        </div>
+                    </article>
+
+                    <article class="rental-item">
+                        <span class="service-index">04</span>
+                        <div>
+                            <h2>Tableros eléctricos</h2>
+                            <p>Distribución desde 100A hasta 2000A, trifásica.</p>
+                        </div>
+                    </article>
+
+                    <article class="rental-item">
+                        <span class="service-index">05</span>
+                        <div>
+                            <h2>Medición y vinculación de puesta a tierra (PAT)</h2>
+                            <p>Medición y certificación con informe técnico.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 ```
 
-Reemplazala por este bloque:
+Notas:
 
-```css
-/* DESPUÉS */
-/* Servicios: un solo fondo continuo, sin alternancia de bandas.
-   Anula band-muted / band-accent / band-dark dentro de .services-page. */
-.services-page .band,
-.services-page .band-muted,
-.services-page .band-accent,
-.services-page .band-dark {
-    background: var(--band-muted);
-    color: var(--color-text);
-    padding: clamp(2.75rem, 5vw, 4.5rem) 0;
-}
+- El `<main>` de hoy no tiene `id="main-content"`, así que el "Saltar al contenido" del header no llega a ningún lado. Agregarlo lo arregla de paso.
+- `<h2 class="hidden">` da un encabezado al listado para lectores de pantalla sin mostrarlo. La clase `hidden` ya existe en el CSS.
+- Las rutas de imagen son las mismas que usa hoy la página. Ojo con `TABLERO ELECTRICO.jpeg`: lleva espacio y va en mayúsculas, tal cual está en el repo.
 
-.services-page .band h2,
-.services-page .band h3,
-.services-page .band h4 { color: var(--color-heading); }
-.services-page .band p  { color: var(--color-text); }
+## Paso 3 — fondo (revisar)
 
-/* separador fino entre servicios (el hero ya trae su propio borde) */
-.services-page .band + .band { border-top: 1px solid var(--color-border); }
-```
-
-Por qué hace falta cada parte:
-
-- Las reglas de color van **dentro** del bloque `.services-page` porque las globales de la línea 330–336 (`.band-accent { background: var(--dark); color:#fff }`, `.band-accent h2 { color:#fff }`, `.band-dark p { color: rgba(215,213,213,0.92) }`) siguen existiendo y se aplican a rental. Con dos clases en el selector, el nuevo bloque gana por especificidad. Si solo cambiás el fondo, los títulos y párrafos quedan blancos sobre gris claro.
-- `h2/h3/h4` y `p` por separado porque `color` no hereda a los headings: tienen su propio color desde `--color-heading`.
-- El `padding` unificado reemplaza al `4rem 0` que borraste y además gana sobre los utilitarios `pt-20` / `pb-50` de la primera banda de `transporte/index.html`, que es lo que hacía que esa banda tuviera un espaciado distinto al resto.
-- `.band + .band` es el divisor. Deja sin borde a la primera banda, porque el hero ya aporta su `border-bottom`.
-
-## Paso 3 — la sombra de las imágenes (recomendado)
-
-`css/main.css`, línea ~530. Esa sombra fue calculada para un fondo navy; sobre gris claro se ve como una mancha azul.
-
-```css
-/* ANTES */
-.services-page .image-content {
-    box-shadow: 0 20px 45px -20px rgba(10, 28, 63, 0.5);
-}
-
-/* DESPUÉS */
-.services-page .image-content {
-    box-shadow: 0 18px 40px -22px rgba(26, 36, 49, 0.28);
-}
-```
-
-## Paso 4 — limpieza del HTML (opcional)
-
-El CSS del paso 2 ya anula `band-accent` y `band-dark`, así que podés dejar el HTML como está y funciona. Si preferís que el marcado diga la verdad, sacá los modificadores y dejá solo `band`:
-
-- `transporte/index.html` línea 111: `class="band band-accent"` → `class="band"`
-- `transporte/index.html` línea 87: `class="band band-muted pt-20 pb-50"` → `class="band"`
-- `rental/index.html` línea 95: `class="band band-accent"` → `class="band"`
-- `rental/index.html` línea 127: `class="band band-dark"` → `class="band"`
-- `rental/index.html` y `mecanica/index.html`: los `class="band band-muted"` pueden quedarse; `band-muted` ya pinta el mismo color.
-
-Si hacés el paso 4 en **todas** las páginas de servicios, el bloque del paso 2 se puede simplificar a solo `.services-page .band`. Mientras quede un `band-accent` o `band-dark` suelto, dejá los cuatro selectores.
-
----
+`.services-page` tiene `background: var(--band-muted)`. Con `.rental-page` el fondo pasa a blanco. Si preferís mantener el gris del resto de servicios, borrá la primera línea del bloque del paso 1 (`.rental-page { background: … }`) y dejá solo las demás reglas.
 
 ## Qué revisar después
 
-1. `/transporte/` — tres servicios sobre el mismo gris, dos líneas divisorias, sin franja navy en el medio.
-2. `/rental/` — es la que más cambia (tenía `band-accent` y `band-dark`). Verificá que ningún título ni párrafo quedó blanco sobre claro, y los `<strong>` de "Características:" / "Seguridad industrial:".
-3. `/mecanica/` — debería verse casi igual que antes, solo con el espaciado nuevo.
-4. `/empleos/` — su `band-accent` tiene que **seguir** navy. Si se aclaró, el selector quedó sin el `.services-page` adelante.
-5. Móvil (menos de 900px): el hero pasa a una columna y las bandas se apilan; el fondo tiene que ser continuo igual.
+1. `/rental/` en escritorio: la franja tiene cinco fotos parejas de 230px y el listado arranca alineado con la intro.
+2. Entre 900px y 600px: la franja pasa a dos columnas y la quinta foto ocupa el ancho completo; la intro queda arriba del listado.
+3. En teléfono: los números 01–05 no deben empujar los títulos fuera de la pantalla.
+4. `/transporte/` y `/mecanica/` tienen que verse exactamente igual que antes. Si cambiaron, algún selector del paso 1 quedó sin el prefijo `.rental-`.
+5. El CTA usa `.cta-button`, que en móvil pasa a ancho completo. Es el comportamiento que ya tiene el resto del sitio.
 
 ## Volver atrás
 
-Los tres pasos son reemplazos en un solo archivo. Para revertir, restaurá `css/main.css`: `.services-page { background: #0d1c2d; }` y `.services-page .band { padding: 4rem 0; }`. Si hiciste el paso 4, devolvé las clases `band-accent` / `band-dark` al HTML.
-
-## Archivo ya parcheado
-
-`patch/css/main.css` en este proyecto es tu `main.css` con los pasos 1, 2 y 3 aplicados, por si preferís pisarlo directamente en lugar de editar a mano. El paso 4 no está hecho ahí (no toqué ningún HTML).
+Borrar el bloque del paso 1 y restaurar el `<main>` original de `rental/index.html`. No hay cambios en otros archivos.
