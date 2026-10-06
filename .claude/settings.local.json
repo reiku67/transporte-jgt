@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/Users/Pablo/Documents/transporte-jgt/**)",
-      "Bash(git restore *)"
-    ]
-  }
-}
