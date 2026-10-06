@@ -60,12 +60,12 @@ h1{margin:0;font-size:clamp(44px,7vw,88px);line-height:.98;letter-spacing:-.04em
 .metrics .d{color:#aab4c0;font-size:15px;margin-top:6px}
 h2{margin:24px 0 40px;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;font-weight:700}
 .services{padding-top:48px;padding-bottom:96px}
-.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:16px}
 .card{display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:border-color .15s}
 .card img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .card div{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px}
 .card div span:last-child{color:#7d8896}
-.grid2{padding-bottom:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.grid2{padding-bottom:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
 .panel{padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
 .panel .tag{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0}
 .panel h3{margin:16px 0 10px;font-size:26px;letter-spacing:-.02em;font-weight:700}
@@ -81,6 +81,38 @@ footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .fgrid a:hover{color:#7fb3e0}
 .muted{color:#aab4c0}
 .copy{padding-top:20px;padding-bottom:32px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:#7d8896}
+@media (max-width:640px){
+.wrap{padding-left:18px;padding-right:18px}
+.bar{height:56px;gap:12px}
+.brand{gap:10px;min-width:0}
+.brand img{height:22px}
+.brand span{height:18px}
+nav{gap:14px}
+nav .btn{padding:7px 12px;font-size:13px}
+.hero{padding-top:56px;padding-bottom:36px}
+.hero .kicker,.kicker{font-size:12px;margin-bottom:16px}
+h1{font-size:40px}
+.lead{font-size:17px;margin-top:18px}
+.actions{margin-top:28px}
+.actions .btn{flex:1;text-align:center}
+.photo{aspect-ratio:4/3;border-radius:10px}
+.metrics{padding-top:48px;padding-bottom:48px;grid-template-columns:1fr;gap:28px}
+.metrics .n{font-size:38px}
+h2{margin:16px 0 24px}
+.services{padding-top:32px;padding-bottom:56px}
+.grid4{grid-template-columns:1fr 1fr;gap:10px}
+.card div{padding:12px;font-size:14px}
+.card div span:last-child{display:none}
+.grid2{grid-template-columns:1fr;padding-bottom:56px}
+.panel{padding:24px}
+.panel h3{font-size:22px}
+.clients{padding-top:32px;padding-bottom:56px}
+.logos{grid-template-columns:repeat(2,1fr);gap:10px}
+.logos div{height:76px;padding:14px}
+.logos img{max-height:32px}
+.fgrid{padding-top:40px;gap:24px}
+}
+@media (max-width:380px){nav a.link{display:none}}
 </style>
 </head>
 <body>
