@@ -54,6 +54,7 @@ textarea{resize:vertical;min-height:160px}
 .info{display:grid;gap:28px}
 .info .mono{margin-bottom:10px}
 .info a:hover{color:#7fb3e0}
+.notice{margin:0 0 20px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:8px;color:#e6eaef;background:#111b2a}
 .muted{color:#aab4c0}
 footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .fgrid{padding-top:40px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:#7d8896}
@@ -116,10 +117,11 @@ h2{margin:16px 0 24px}
 
   <section class="wrap layout">
     <div class="panel">
+      <p class="notice" id="form-success" role="status" hidden>¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.</p>
       <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
         <input type="hidden" name="_template" value="basic">
         <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_next" value="https://www.transporte-jgt.com/gracias/">
+        <input type="hidden" name="_next" value="https://www.transporte-jgt.com/contacto/?enviado=1">
         <input type="hidden" name="_replyto" id="_replyto">
         <div>
           <label for="name">Nombre / Empresa</label>
@@ -154,10 +156,6 @@ h2{margin:16px 0 24px}
         <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén ↗</a>
       </div>
       <div>
-        <div class="mono"><a href="/empleos/">Trabajá con nosotros</a></div>
-        <div>busquedasrrhh548[at]gmail.com</div>
-      </div>
-      <div>
         <div class="mono">Redes</div>
         <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
@@ -173,6 +171,9 @@ h2{margin:16px 0 24px}
 </footer>
 
 <script>
+if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+  document.getElementById('form-success').hidden = false;
+}
 document.getElementById('contact-form').addEventListener('submit', function () {
   document.getElementById('_replyto').value = document.getElementById('email').value;
 });
