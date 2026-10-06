@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e6eaef;text-decoration:none}
+a:hover{color:#7fb3e0}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:10;background:rgba(11,19,32,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#" style="display:flex;align-items:center;gap:14px">
+      <img src="assets/JGT1.webp" alt="JGT" style="height:30px;width:auto">
+      <span style="width:1px;height:22px;background:rgba(255,255,255,0.2)"></span>
+      <img src="assets/timol.webp" alt="Timol" style="height:30px;width:auto">
+    </a>
+    <nav style="display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;flex-wrap:wrap">
+      <a href="#servicios" style="color:#aab4c0" style-hover="color:#fff">Servicios</a>
+      <a href="#contacto" style="padding:8px 16px;background:#e6eaef;color:#0b1320;border-radius:6px;font-weight:600" style-hover="background:#fff;color:#0b1320">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section style="max-width:1200px;margin:0 auto;padding:96px 24px 56px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:24px">Añelo · Vaca Muerta · desde 2007</div>
+  <h1 style="margin:0;font-size:clamp(44px,7vw,88px);line-height:0.98;letter-spacing:-0.04em;font-weight:700;max-width:14ch;text-wrap:balance">Transporte JGT y Timol</h1>
+  <p style="margin:28px 0 0;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#aab4c0;max-width:46ch;text-wrap:pretty">Especialistas en cargas generales y pesadas, hidrogrúas y carretones para la industria petrolera en Vaca Muerta y Añelo.</p>
+  <div style="display:flex;gap:12px;margin-top:40px;flex-wrap:wrap">
+    <a href="#servicios" style="padding:14px 22px;background:#e6eaef;color:#0b1320;border-radius:8px;font-weight:600;font-size:15px" style-hover="background:#fff;color:#0b1320">Ver servicios</a>
+    <a href="#contacto" style="padding:14px 22px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-weight:600;font-size:15px" style-hover="border-color:#fff;color:#fff">Contacto</a>
+  </div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 24px">
+  <img src="assets/equipos.webp" alt="Flota de equipos pesados de Transporte JGT y Timol" style="display:block;width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,0.08)">
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:transparent">
+  <div style="padding:8px 0">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em">Trayectoria</div>
+    <div style="font-size:48px;font-weight:700;letter-spacing:-0.03em;margin-top:10px">18+ años</div>
+    <div style="color:#aab4c0;font-size:15px;margin-top:6px">En operación continua desde 2007</div>
+  </div>
+  <div style="padding:8px 0">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em">Base operativa</div>
+    <div style="font-size:48px;font-weight:700;letter-spacing:-0.03em;margin-top:10px">Añelo</div>
+    <div style="color:#aab4c0;font-size:15px;margin-top:6px">Fortín de Piedra</div>
+  </div>
+  <div style="padding:8px 0">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em">Cobertura</div>
+    <div style="font-size:48px;font-weight:700;letter-spacing:-0.03em;margin-top:10px">180 km</div>
+    <div style="color:#aab4c0;font-size:15px;margin-top:6px">Servicios en toda la zona</div>
+  </div>
+</section>
+
+<section id="servicios" style="max-width:1200px;margin:0 auto;padding:48px 24px 96px;border-top:1px solid rgba(255,255,255,0.08)">
+  <h2 style="margin:24px 0 40px;font-size:clamp(30px,4vw,44px);letter-spacing:-0.03em;font-weight:700">Servicios</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px">
+    <a href="#" style="display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden" style-hover="border-color:rgba(127,179,224,0.6)">
+      <img src="assets/carreton.webp" alt="Transporte" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+      <div style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px"><span>Transporte</span><span style="color:#7d8896">→</span></div>
+    </a>
+    <a href="#" style="display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden" style-hover="border-color:rgba(127,179,224,0.6)">
+      <img src="assets/vivienda1.jpg" alt="Rental" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+      <div style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px"><span>Rental</span><span style="color:#7d8896">→</span></div>
+    </a>
+    <a href="#" style="display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden" style-hover="border-color:rgba(127,179,224,0.6)">
+      <img src="assets/amoladora.jpeg" alt="Mecánica y Metalúrgica" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+      <div style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px"><span>Mecánica y Metalúrgica</span><span style="color:#7d8896">→</span></div>
+    </a>
+    <a href="#" style="display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden" style-hover="border-color:rgba(127,179,224,0.6)">
+      <img src="assets/gomeria-movil.webp" alt="Gomería Móvil" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+      <div style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px"><span>Gomería Móvil</span><span style="color:#7d8896">→</span></div>
+    </a>
+  </div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:0 24px 96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+  <div style="padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0">● Rastreo satelital</div>
+    <h3 style="margin:16px 0 10px;font-size:26px;letter-spacing:-0.02em;font-weight:700">Flota gerenciada</h3>
+    <p style="margin:0;color:#aab4c0;font-size:16px;line-height:1.6">Cada unidad monitoreada en tiempo real.</p>
+  </div>
+  <div style="padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0">● Guardia activa</div>
+    <h3 style="margin:16px 0 10px;font-size:26px;letter-spacing:-0.02em;font-weight:700">¿Emergencia? Hay alguien del otro lado.</h3>
+    <p style="margin:0;color:#aab4c0;font-size:16px;line-height:1.6">Atención telefónica para emergencias, inclusive fines de semana.</p>
+  </div>
+</section>
+
+<section style="max-width:1200px;margin:0 auto;padding:56px 24px 96px;border-top:1px solid rgba(255,255,255,0.08)">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em;margin:24px 0 32px">Confían en nosotros</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/flowback.webp" alt="Flowback" style="max-height:44px;max-width:100%;object-fit:contain"></div>
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/slb.svg" alt="SLB" style="max-height:36px;max-width:100%;object-fit:contain"></div>
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/naborss.png" alt="Nabors" style="max-height:40px;max-width:100%;object-fit:contain"></div>
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/phoenix.webp" alt="Phoenix Global Resources" style="max-height:30px;max-width:100%;object-fit:contain"></div>
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/cws.svg" alt="CWS CalFrac" style="max-height:52px;max-width:100%;object-fit:contain"></div>
+    <div style="height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px"><img src="assets/logos/tacker.webp" alt="Tacker" style="max-height:40px;max-width:100%;object-fit:contain"></div>
+  </div>
+</section>
+
+<footer id="contacto" style="border-top:1px solid rgba(255,255,255,0.08);background:#080f1a">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;font-size:15px">
+    <div>
+      <img src="assets/JGT1.webp" alt="Transporte JGT" style="height:32px;width:auto">
+      <p style="margin:16px 0 0;color:#aab4c0">Seguro nosotros podemos.</p>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px">Oficina</div>
+      <div style="color:#e6eaef">Pastor J. A. Bowdler 502, Cipolletti</div>
+      <div style="color:#aab4c0;margin-top:6px">Ruta 17, Añelo, Neuquén</div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px">Trabajá con nosotros</div>
+      <div style="color:#e6eaef">busquedasrrhh548[at]gmail.com</div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px">Redes</div>
+      <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:20px 24px 32px;border-top:1px solid rgba(255,255,255,0.06);font-size:13px;color:#7d8896">Transporte JGT SRL y Timol SRL</div>
+</footer>
+</x-dc>
+</body>
+</html>
