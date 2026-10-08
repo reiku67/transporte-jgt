@@ -31,33 +31,37 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-f
 nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
 nav a.link{color:#aab4c0}
 nav a.link:hover{color:#fff}
-.btn{display:inline-block;padding:14px 22px;border-radius:8px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
 .btn-light{background:#e6eaef;color:#0b1320}
 .btn-light:hover{background:#fff}
 nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
-.hero{padding-top:96px;padding-bottom:48px}
-.kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:24px}
-h1{margin:0;font-size:clamp(44px,7vw,80px);line-height:.98;letter-spacing:-.04em;font-weight:700}
-.lead{margin:24px 0 0;font-size:clamp(18px,2vw,21px);line-height:1.5;color:#aab4c0;max-width:46ch}
-.layout{padding-bottom:96px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:start}
-@media (max-width:860px){.layout{grid-template-columns:1fr}}
-.panel{padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
-form{display:grid;gap:20px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:560px){.row{grid-template-columns:1fr}.panel{padding:24px}}
-label{display:block;font-size:14px;font-weight:500;margin-bottom:8px}
-label span{color:#7d8896;font-weight:400}
-input,textarea{width:100%;padding:13px 14px;background:#0b1320;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:#e6eaef;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
-input:focus,textarea:focus{border-color:#7fb3e0}
-textarea{resize:vertical;min-height:160px}
-::placeholder{color:#5f6b78}
-.info{display:grid;gap:28px}
-.info .mono{margin-bottom:10px}
+.layout{padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+.side{display:flex;flex-direction:column;gap:32px}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:14px}
+h1{margin:0;font-size:56px;line-height:1;letter-spacing:-.035em;font-weight:700}
+.lead{margin:14px 0 0;font-size:18px;line-height:1.5;color:#aab4c0;max-width:34ch;text-wrap:pretty}
+.info{display:grid}
+.info > div{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
+.info .mono{margin-bottom:6px}
 .info a:hover{color:#7fb3e0}
-.notice{margin:0 0 20px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:8px;color:#e6eaef;background:#111b2a}
+.panel{padding:28px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
+form{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row .full{grid-column:1 / -1}
+label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
+label span{color:#7d8896;font-weight:400}
+input,textarea{width:100%;padding:11px 14px;background:#0b1320;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:#e6eaef;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
+input:focus,textarea:focus{border-color:#7fb3e0}
+textarea{display:block;resize:vertical;min-height:120px}
+::placeholder{color:#5f6b78}
+.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:8px;color:#e6eaef;background:#0b1320}
 .muted{color:#aab4c0}
 footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
-.fgrid{padding-top:40px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:#7d8896}
+.fgrid{padding-top:24px;padding-bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:#7d8896}
+@media (max-width:860px){
+.layout{grid-template-columns:1fr;gap:28px}
+.side{gap:24px}
+}
 @media (max-width:640px){
 .wrap{padding-left:18px;padding-right:18px}
 .bar{height:56px;gap:12px}
@@ -66,28 +70,14 @@ footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .brand span{height:18px}
 nav{gap:14px}
 nav .btn{padding:7px 12px;font-size:13px}
-.hero{padding-top:56px;padding-bottom:36px}
-.hero .kicker,.kicker{font-size:12px;margin-bottom:16px}
+.layout{padding-top:36px;padding-bottom:40px}
+.kicker{font-size:12px;margin-bottom:12px}
 h1{font-size:40px}
-.lead{font-size:17px;margin-top:18px}
-.actions{margin-top:28px}
-.actions .btn{flex:1;text-align:center}
-.photo{aspect-ratio:4/3;border-radius:10px}
-.metrics{padding-top:48px;padding-bottom:48px;grid-template-columns:1fr;gap:28px}
-.metrics .n{font-size:38px}
-h2{margin:16px 0 24px}
-.services{padding-top:32px;padding-bottom:56px}
-.grid4{grid-template-columns:1fr 1fr;gap:10px}
-.card div{padding:12px;font-size:14px}
-.card div span:last-child{display:none}
-.grid2{grid-template-columns:1fr;padding-bottom:56px}
-.panel{padding:24px}
-.panel h3{font-size:22px}
-.clients{padding-top:32px;padding-bottom:56px}
-.logos{grid-template-columns:repeat(2,1fr);gap:10px}
-.logos div{height:76px;padding:14px}
-.logos img{max-height:32px}
-.fgrid{padding-top:40px;gap:24px}
+.lead{font-size:17px;margin-top:12px}
+.info > div{padding:12px 0}
+.panel{padding:20px}
+.row{grid-template-columns:1fr}
+.fgrid{padding-top:20px;padding-bottom:20px;gap:8px}
 }
 @media (max-width:380px){nav a.link{display:none}}
 </style>
@@ -109,13 +99,30 @@ h2{margin:16px 0 24px}
 </header>
 
 <main id="main-content">
-  <section class="wrap hero">
-    <div class="kicker">Contacto</div>
-    <h1>Escribinos</h1>
-    <p class="lead">Completá el formulario y te responderemos a la brevedad.</p>
-  </section>
-
   <section class="wrap layout">
+    <div class="side">
+      <div>
+        <div class="kicker">Contacto</div>
+        <h1>Escribinos</h1>
+        <p class="lead">Completá el formulario y te responderemos a la brevedad.</p>
+      </div>
+      <div class="info">
+        <div>
+          <div class="mono">Oficina</div>
+          <div>Pastor J. A. Bowdler 502</div>
+          <div class="muted">Cipolletti, Río Negro</div>
+        </div>
+        <div>
+          <div class="mono">Base operativa</div>
+          <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén ↗</a>
+        </div>
+        <div>
+          <div class="mono">Redes</div>
+          <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+
     <div class="panel">
       <p class="notice" id="form-success" role="status" hidden>¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.</p>
       <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
@@ -123,11 +130,11 @@ h2{margin:16px 0 24px}
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_next" value="https://www.transporte-jgt.com/contacto/?enviado=1">
         <input type="hidden" name="_replyto" id="_replyto">
-        <div>
-          <label for="name">Nombre / Empresa</label>
-          <input type="text" id="name" name="Nombre/Empresa" required>
-        </div>
         <div class="row">
+          <div class="full">
+            <label for="name">Nombre / Empresa</label>
+            <input type="text" id="name" name="Nombre/Empresa" required>
+          </div>
           <div>
             <label for="email">Correo electrónico</label>
             <input type="email" id="email" name="Correo" required>
@@ -139,26 +146,10 @@ h2{margin:16px 0 24px}
         </div>
         <div>
           <label for="message">Mensaje</label>
-          <textarea id="message" name="Mensaje" rows="7" placeholder="Escribí tu consulta acá..." required></textarea>
+          <textarea id="message" name="Mensaje" rows="5" placeholder="Escribí tu consulta acá..." required></textarea>
         </div>
         <div><button type="submit" class="btn btn-light">Enviar mensaje</button></div>
       </form>
-    </div>
-
-    <div class="panel info">
-      <div>
-        <div class="mono">Oficina</div>
-        <div>Pastor J. A. Bowdler 502</div>
-        <div class="muted">Cipolletti, Río Negro</div>
-      </div>
-      <div>
-        <div class="mono">Base operativa</div>
-        <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén ↗</a>
-      </div>
-      <div>
-        <div class="mono">Redes</div>
-        <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
     </div>
   </section>
 </main>
