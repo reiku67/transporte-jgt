@@ -1,0 +1,94 @@
+*{box-sizing:border-box}
+body{margin:0;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e6eaef;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:.08em}
+.line{border-top:1px solid rgba(255,255,255,.08)}
+header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.bar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:30px;width:auto}
+.brand span{width:1px;height:22px;background:rgba(255,255,255,.2)}
+nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
+nav a.link{color:#aab4c0}
+nav a.link:hover{color:#fff}
+.btn{display:inline-block;padding:14px 22px;border-radius:8px;font-weight:600;font-size:15px;transition:background .15s,border-color .15s}
+.btn-light{background:#e6eaef;color:#0b1320}
+.btn-light:hover{background:#fff}
+.btn-ghost{border:1px solid rgba(255,255,255,.2)}
+.btn-ghost:hover{border-color:#fff}
+nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
+.hero{padding-top:96px;padding-bottom:56px}
+.hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:24px}
+h1{margin:0;font-size:clamp(44px,7vw,88px);line-height:.98;letter-spacing:-.04em;font-weight:700;max-width:14ch;text-wrap:balance}
+.lead{margin:28px 0 0;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#aab4c0;max-width:46ch;text-wrap:pretty}
+.actions{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.photo{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+.metrics{padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.metrics .n{font-size:48px;font-weight:700;letter-spacing:-.03em;margin-top:10px}
+.metrics .d{color:#aab4c0;font-size:15px;margin-top:6px}
+h2{margin:24px 0 40px;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;font-weight:700}
+.services{padding-top:48px;padding-bottom:96px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card div{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px}
+.card div span:last-child{color:#7d8896}
+.grid2{padding-bottom:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
+.panel{padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
+.panel .tag{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0}
+.panel h3{margin:16px 0 10px;font-size:26px;letter-spacing:-.02em;font-weight:700}
+.panel p{margin:0;color:#aab4c0;font-size:16px;line-height:1.6}
+.clients{padding-top:56px;padding-bottom:96px}
+.clients .mono{margin:24px 0 32px}
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.logos div{height:96px;background:#e6eaef;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px}
+.logos img{max-height:40px;object-fit:contain}
+footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
+.fgrid{padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;font-size:15px}
+.fgrid .mono{margin-bottom:12px}
+.fgrid a:hover{color:#7fb3e0}
+.muted{color:#aab4c0}
+.footer-logo{height:32px;width:auto}
+.footer-tagline{margin:16px 0 0}
+.footer-address{margin-top:6px}
+.copy{padding-top:20px;padding-bottom:32px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:#7d8896}
+@media (max-width:640px){
+.wrap{padding-left:18px;padding-right:18px}
+.bar{height:64px;gap:16px}
+.brand{gap:10px;min-width:0}
+.brand img{height:24px}
+.brand span{height:20px}
+nav{gap:20px;font-size:13px}
+nav a.link{color:#c0cad5}
+nav .btn{padding:9px 14px;font-size:13px}
+.hero{padding-top:56px;padding-bottom:36px}
+.hero .kicker,.kicker{font-size:12px;margin-bottom:16px}
+h1{font-size:40px}
+.lead{font-size:17px;margin-top:18px}
+.actions{margin-top:28px}
+.actions .btn{flex:1;text-align:center}
+.photo{height:min(56vw,260px);aspect-ratio:auto;border-radius:10px}
+.metrics{padding-top:48px;padding-bottom:48px;grid-template-columns:1fr;gap:28px}
+.metrics .n{font-size:38px}
+h2{margin:16px 0 24px}
+.services{padding-top:32px;padding-bottom:56px}
+.grid4{grid-template-columns:1fr 1fr;gap:10px}
+.card div{padding:12px;font-size:14px}
+.grid2{grid-template-columns:1fr;padding-bottom:56px}
+.panel{padding:24px}
+.panel h3{font-size:22px}
+.clients{padding-top:32px;padding-bottom:56px}
+.logos{grid-template-columns:repeat(2,1fr);gap:10px}
+.logos div{height:76px;padding:14px}
+.logos img{max-height:32px}
+.fgrid{padding-top:40px;gap:24px}
+}
+@media (max-width:400px){
+.bar{height:auto;min-height:64px;flex-direction:column;align-items:stretch;gap:10px;padding-top:10px;padding-bottom:10px}
+.brand{align-self:flex-start}
+nav{justify-content:space-between;gap:12px}
+nav a.link{display:inline-block;padding:8px 0}
+nav .btn{min-width:112px;text-align:center}
+}
