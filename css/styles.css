@@ -51,7 +51,7 @@ footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .fgrid a:hover{color:#7fb3e0}
 .muted{color:#aab4c0}
 .footer-logo{height:32px;width:auto}
-.footer-tagline{margin:16px 0 0}
+.footer-tagline{margin:16px 0 0;color:#e6eaef;font-size:clamp(20px,2vw,24px);font-weight:600;line-height:1.3}
 .footer-address{margin-top:6px}
 .copy{padding-top:20px;padding-bottom:32px;border-top:1px solid rgba(255,255,255,.06);font-size:13px;color:#7d8896}
 @media (max-width:640px){
