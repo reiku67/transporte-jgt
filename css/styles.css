@@ -3,9 +3,9 @@ body{margin:0;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-
 a{color:#e6eaef;text-decoration:none}
 img{display:block;max-width:100%}
 .wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
-.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:.08em}
+.mono{font-size:14px;font-weight:600;color:#aab4c0}
 .line{border-top:1px solid rgba(255,255,255,.08)}
-header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+header{position:sticky;top:0;z-index:10;background:#0b1320;border-bottom:1px solid rgba(255,255,255,.08)}
 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{height:30px;width:auto}
@@ -13,31 +13,31 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-f
 nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
 nav a.link{color:#aab4c0}
 nav a.link:hover{color:#fff}
-.btn{display:inline-block;padding:14px 22px;border-radius:8px;font-weight:600;font-size:15px;transition:background .15s,border-color .15s}
+.btn{display:inline-block;padding:14px 22px;border-radius:2px;font-weight:600;font-size:15px;transition:background .15s,border-color .15s}
 .btn-light{background:#e6eaef;color:#0b1320}
 .btn-light:hover{background:#fff}
 .btn-ghost{border:1px solid rgba(255,255,255,.2)}
 .btn-ghost:hover{border-color:#fff}
-nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
+nav .btn{padding:8px 16px;border-radius:2px;font-size:14px}
 .hero{padding-top:96px;padding-bottom:56px}
 .hero .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:24px}
 h1{margin:0;font-size:clamp(44px,7vw,88px);line-height:.98;letter-spacing:-.04em;font-weight:700;max-width:14ch;text-wrap:balance}
 .lead{margin:28px 0 0;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#aab4c0;max-width:46ch;text-wrap:pretty}
 .actions{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
-.photo{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+.photo{width:100%;aspect-ratio:16/8;object-fit:cover;border:1px solid rgba(255,255,255,.08)}
 .metrics{padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .metrics .n{font-size:48px;font-weight:700;letter-spacing:-.03em;margin-top:10px}
 .metrics .d{color:#aab4c0;font-size:15px;margin-top:6px}
 h2{margin:24px 0 40px;font-size:clamp(30px,4vw,44px);letter-spacing:-.03em;font-weight:700}
 .services{padding-top:48px;padding-bottom:96px}
 .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:16px}
-.card{display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:border-color .15s}
+.card{display:flex;flex-direction:column;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:0;overflow:hidden;transition:border-color .15s}
 .card img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .card div{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px}
 .card div span:last-child{color:#7d8896}
 .grid2{padding-bottom:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
-.panel{padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
-.panel .tag{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0}
+.panel{padding:36px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:2px}
+.panel .tag{font-size:14px;font-weight:600;color:#7fb3e0}
 .panel h3{margin:16px 0 10px;font-size:26px;letter-spacing:-.02em;font-weight:700}
 .panel p{margin:0;color:#aab4c0;font-size:16px;line-height:1.6}
 .clients{padding-top:56px;padding-bottom:96px}
@@ -69,7 +69,7 @@ h1{font-size:40px}
 .lead{font-size:17px;margin-top:18px}
 .actions{margin-top:28px}
 .actions .btn{flex:1;text-align:center}
-.photo{height:min(56vw,260px);aspect-ratio:auto;border-radius:10px}
+.photo{height:min(56vw,260px);aspect-ratio:auto}
 .metrics{padding-top:48px;padding-bottom:48px;grid-template-columns:1fr;gap:28px}
 .metrics .n{font-size:38px}
 h2{margin:16px 0 24px}

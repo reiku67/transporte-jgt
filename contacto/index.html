@@ -23,8 +23,8 @@ main{flex:1}
 a{color:#e6eaef;text-decoration:none}
 img{display:block;max-width:100%}
 .wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
-.mono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8896;text-transform:uppercase;letter-spacing:.08em}
-header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.mono{font-size:14px;font-weight:600;color:#aab4c0}
+header{position:sticky;top:0;z-index:10;background:#0b1320;border-bottom:1px solid rgba(255,255,255,.08)}
 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{height:30px;width:auto}
@@ -32,7 +32,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(11,19,32,.85);backdrop-f
 nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
 nav a.link{color:#aab4c0}
 nav a.link:hover{color:#fff}
-.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn{display:inline-block;padding:12px 22px;border-radius:2px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
 .btn-light{background:#e6eaef;color:#0b1320}
 .btn-light:hover{background:#fff}
 nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
@@ -45,17 +45,17 @@ h1{margin:0;font-size:56px;line-height:1;letter-spacing:-.035em;font-weight:700}
 .info > div{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
 .info .mono{margin-bottom:6px}
 .info a:hover{color:#7fb3e0}
-.panel{padding:28px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:12px}
+.panel{padding:28px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:2px}
 form{display:grid;gap:16px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .row .full{grid-column:1 / -1}
 label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
 label span{color:#7d8896;font-weight:400}
-input,textarea{width:100%;padding:11px 14px;background:#0b1320;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:#e6eaef;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
+input,textarea{width:100%;padding:11px 14px;background:#0b1320;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#e6eaef;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
 input:focus,textarea:focus{border-color:#7fb3e0}
 textarea{display:block;resize:vertical;min-height:120px}
 ::placeholder{color:#5f6b78}
-.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:8px;color:#e6eaef;background:#0b1320}
+.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:2px;color:#e6eaef;background:#0b1320}
 .muted{color:#aab4c0}
 footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .fgrid{padding-top:24px;padding-bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:#7d8896}
@@ -115,11 +115,11 @@ h1{font-size:40px}
         </div>
         <div>
           <div class="mono">Base operativa</div>
-          <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén ↗</a>
+          <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén</a>
         </div>
         <div>
           <div class="mono">Redes</div>
-          <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@ h1{font-size:40px}
           <label for="message">Mensaje</label>
           <textarea id="message" name="Mensaje" rows="5" placeholder="Escribí tu consulta acá..." required></textarea>
         </div>
-        <div><button type="submit" class="btn btn-light">ENVIAR</button></div>
+        <div><button type="submit" class="btn btn-light">Enviar</button></div>
       </form>
     </div>
   </section>
