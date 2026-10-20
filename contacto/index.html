@@ -15,7 +15,9 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   color-scheme:dark;
@@ -70,7 +72,7 @@ label span{color:var(--fg-dim);font-weight:400}
 input,textarea{inline-size:100%;padding:11px 14px;background:var(--bg);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);color:var(--fg);font:inherit;font-size:15px;outline:none;transition:border-color .15s}
 input:focus-visible,textarea:focus-visible{border-color:var(--accent);outline:none}
 textarea{display:block;resize:vertical;min-block-size:120px}
-::placeholder{color:#5f6b78}
+::placeholder{color:var(--fg-dim)}
 .notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:var(--radius);color:var(--fg);background:var(--bg)}
 .muted{color:var(--fg-muted)}
 footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
@@ -120,9 +122,9 @@ footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
 <header>
   <div class="wrap bar">
     <a href="/" class="brand" aria-label="Inicio — Transporte JGT">
-      <img src="/img/JGT1.webp" alt="Logo JGT" width="160" height="40">
+      <img src="/img/JGT1.webp" alt="Logo JGT" width="160" height="69">
       <span aria-hidden="true"></span>
-      <img src="/img/timol.webp" alt="Logo Timol" width="160" height="40">
+      <img src="/img/timol.webp" alt="Logo Timol" width="270" height="118">
     </a>
     <nav aria-label="Navegación principal">
       <a class="link" href="/#servicios">Servicios</a>
