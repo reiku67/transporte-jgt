@@ -17,84 +17,101 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:root{
+  color-scheme:dark;
+  --bg:#0b1320;--bg-footer:#080f1a;--surface:#111b2a;
+  --fg:#e6eaef;--fg-muted:#aab4c0;--fg-dim:#7d8896;--accent:#7fb3e0;
+  --line:rgba(255,255,255,.08);--line-strong:rgba(255,255,255,.2);
+  --font:'IBM Plex Sans',sans-serif;--font-mono:'IBM Plex Mono',monospace;
+  --wrap:1200px;--gutter:max(24px,env(safe-area-inset-left),env(safe-area-inset-right));
+  --header-h:64px;--radius:2px;
+}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{min-height:100vh;margin:0;display:flex;flex-direction:column;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{min-block-size:100vh;min-block-size:100dvh;margin:0;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
 main{flex:1}
-a{color:#e6eaef;text-decoration:none}
-img{display:block;max-width:100%}
-.wrap{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
-.mono{font-size:14px;font-weight:600;color:#aab4c0}
-header{position:sticky;top:0;z-index:10;background:#0b1320;border-bottom:1px solid rgba(255,255,255,.08)}
-.bar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:14px;min-width:0}
-.brand img{height:30px;width:auto}
-.brand span{width:1px;height:22px;background:rgba(255,255,255,.2);flex-shrink:0}
+a{color:var(--fg);text-decoration:none}
+img{display:block;max-inline-size:100%;block-size:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-inline-size:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.mono{font-size:14px;font-weight:600;color:var(--fg-muted)}
+header{position:sticky;inset-block-start:0;z-index:10;background:var(--bg);border-block-end:1px solid var(--line)}
+.bar{block-size:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;min-inline-size:0}
+.brand img{block-size:30px;inline-size:auto}
+.brand span{inline-size:1px;block-size:22px;background:var(--line-strong);flex-shrink:0}
 nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;flex-shrink:0}
-nav a.link{color:#aab4c0}
-nav a.link:hover{color:#fff}
-.btn{display:inline-block;padding:12px 22px;border-radius:2px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
-.btn-light{background:#e6eaef;color:#0b1320}
-.btn-light:hover{background:#fff}
+nav a.link{color:var(--fg-muted)}
+.btn{display:inline-block;padding:12px 22px;border-radius:var(--radius);font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn-light{background:var(--fg);color:var(--bg)}
 nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
-.layout{padding-top:clamp(36px,4.7vw,56px);padding-bottom:clamp(40px,4.7vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+@media (hover:hover){
+  nav a.link:hover{color:#fff}
+  .btn-light:hover{background:#fff}
+  .info a:hover{color:var(--accent)}
+}
+.layout{padding-block:clamp(36px,4.7vw,56px) clamp(40px,4.7vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
 .side{display:flex;flex-direction:column;gap:32px}
-.kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:14px}
+.kicker{font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-block-end:14px}
 h1{margin:0;font-size:clamp(40px,4.7vw,56px);line-height:1;letter-spacing:-.035em;font-weight:700;overflow-wrap:break-word}
-.lead{margin:14px 0 0;font-size:clamp(17px,1.5vw,18px);line-height:1.5;color:#aab4c0;max-width:34ch;text-wrap:pretty}
+.lead{margin:14px 0 0;font-size:clamp(17px,1.5vw,18px);line-height:1.5;color:var(--fg-muted);max-inline-size:34ch;text-wrap:pretty}
 .info{display:grid}
-.info > div{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
-.info .mono{margin-bottom:6px}
-.info a:hover{color:#7fb3e0}
-.panel{padding:28px;background:#111b2a;border:1px solid rgba(255,255,255,.08);border-radius:2px}
+.info > div{padding-block:16px;border-block-start:1px solid var(--line)}
+.info .mono{margin-block-end:6px}
+.panel{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);container-type:inline-size}
 form{display:grid;gap:16px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .row .full{grid-column:1 / -1}
-label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
-label span{color:#7d8896;font-weight:400}
-input,textarea{width:100%;padding:11px 14px;background:#0b1320;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#e6eaef;font:inherit;font-size:15px;outline:none;transition:border-color .15s}
-input:focus,textarea:focus{border-color:#7fb3e0}
-textarea{display:block;resize:vertical;min-height:120px}
+@container (width < 480px){
+  .row{grid-template-columns:1fr}
+}
+label{display:block;font-size:14px;font-weight:500;margin-block-end:6px}
+label span{color:var(--fg-dim);font-weight:400}
+input,textarea{inline-size:100%;padding:11px 14px;background:var(--bg);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);color:var(--fg);font:inherit;font-size:15px;outline:none;transition:border-color .15s}
+input:focus-visible,textarea:focus-visible{border-color:var(--accent);outline:none}
+textarea{display:block;resize:vertical;min-block-size:120px}
 ::placeholder{color:#5f6b78}
-.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:2px;color:#e6eaef;background:#0b1320}
-.muted{color:#aab4c0}
-footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
-.fgrid{padding-top:24px;padding-bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:#7d8896}
-@media (max-width:860px){
-.layout{grid-template-columns:1fr;gap:28px}
-.side{gap:24px}
+.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:var(--radius);color:var(--fg);background:var(--bg)}
+.muted{color:var(--fg-muted)}
+footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
+.fgrid{padding-block:24px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--fg-dim)}
+@media (width <= 860px){
+  .layout{grid-template-columns:1fr;gap:28px}
+  .side{gap:24px}
 }
-@media (max-width:640px){
-.wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
-.bar{height:56px;gap:12px}
-.brand{gap:10px}
-.brand img{height:22px}
-.brand span{height:18px}
-nav{gap:14px}
-nav a.link{padding:12px 0}
-nav .btn{padding:7px 12px;font-size:13px}
-.kicker{font-size:12px;margin-bottom:12px}
-.lead{margin-top:12px}
-.info > div{padding:12px 0}
-.panel{padding:20px}
-.row{grid-template-columns:1fr}
-input,textarea{font-size:16px}
-.fgrid{padding-top:20px;padding-bottom:20px;gap:8px}
+@media (width <= 640px){
+  :root{--gutter:max(18px,env(safe-area-inset-left),env(safe-area-inset-right));--header-h:56px}
+  .bar{gap:12px}
+  .brand{gap:10px}
+  .brand img{block-size:22px}
+  .brand span{block-size:18px}
+  nav{gap:14px}
+  nav a.link{padding-block:12px}
+  nav .btn{padding:7px 12px;font-size:13px}
+  .kicker{font-size:12px;margin-block-end:12px}
+  .lead{margin-block-start:12px}
+  .info > div{padding-block:12px}
+  .panel{padding:20px}
+  input,textarea{font-size:16px}
+  .fgrid{padding-block:20px;gap:8px}
 }
-@media (max-width:460px){
-.bar{gap:8px}
-.brand{gap:8px}
-.brand img{height:auto;width:clamp(52px,18vw,88px)}
-.brand span{height:16px}
-nav{gap:10px;font-size:12px}
-nav a.link{white-space:nowrap}
-nav .btn{padding:7px 10px;font-size:12px;white-space:nowrap}
+@media (width <= 460px){
+  .bar{gap:8px}
+  .brand{gap:8px}
+  .brand img{block-size:auto;inline-size:clamp(52px,18vw,88px)}
+  .brand span{block-size:16px}
+  nav{gap:10px;font-size:12px}
+  nav a.link{white-space:nowrap}
+  nav .btn{padding:7px 10px;font-size:12px;white-space:nowrap}
+}
+@media (pointer:coarse){
+  nav a.link{padding-block:12px}
 }
 @media (max-height:500px) and (orientation:landscape){
-.layout{padding-top:32px;padding-bottom:32px}
+  .layout{padding-block:32px}
 }
 @media (prefers-reduced-motion:reduce){
-*,::before,::after{transition-duration:.01ms!important}
+  *,::before,::after{transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -143,26 +160,26 @@ nav .btn{padding:7px 10px;font-size:12px;white-space:nowrap}
       <p class="notice" id="form-success" role="status" hidden>¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.</p>
       <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
         <input type="hidden" name="_template" value="basic">
-        <input type="text" name="_honey" style="display:none">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_next" value="https://www.transporte-jgt.com/contacto/?enviado=1">
         <input type="hidden" name="_replyto" id="_replyto">
         <div class="row">
           <div class="full">
             <label for="name">Nombre / Empresa</label>
-            <input type="text" id="name" name="Nombre/Empresa" required>
+            <input type="text" id="name" name="Nombre/Empresa" autocomplete="organization" enterkeyhint="next" required>
           </div>
           <div>
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="Correo" required>
+            <input type="email" id="email" name="Correo" autocomplete="email" inputmode="email" enterkeyhint="next" required>
           </div>
           <div>
             <label for="phone">Teléfono <span>(opcional)</span></label>
-            <input type="tel" id="phone" name="Teléfono">
+            <input type="tel" id="phone" name="Teléfono" autocomplete="tel" inputmode="tel" enterkeyhint="next">
           </div>
         </div>
         <div>
           <label for="message">Mensaje</label>
-          <textarea id="message" name="Mensaje" rows="5" placeholder="Escribí tu consulta acá..." required></textarea>
+          <textarea id="message" name="Mensaje" rows="5" placeholder="Escribí tu consulta acá..." enterkeyhint="send" required></textarea>
         </div>
         <div><button type="submit" class="btn btn-light">Enviar</button></div>
       </form>
