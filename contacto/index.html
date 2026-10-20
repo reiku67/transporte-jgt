@@ -18,29 +18,30 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-body{min-height:100vh;margin:0;display:flex;flex-direction:column;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-height:100vh;margin:0;display:flex;flex-direction:column;background:#0b1320;color:#e6eaef;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 main{flex:1}
 a{color:#e6eaef;text-decoration:none}
 img{display:block;max-width:100%}
-.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
 .mono{font-size:14px;font-weight:600;color:#aab4c0}
 header{position:sticky;top:0;z-index:10;background:#0b1320;border-bottom:1px solid rgba(255,255,255,.08)}
 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
 .brand img{height:30px;width:auto}
-.brand span{width:1px;height:22px;background:rgba(255,255,255,.2)}
-nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
+.brand span{width:1px;height:22px;background:rgba(255,255,255,.2);flex-shrink:0}
+nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;flex-shrink:0}
 nav a.link{color:#aab4c0}
 nav a.link:hover{color:#fff}
 .btn{display:inline-block;padding:12px 22px;border-radius:2px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
 .btn-light{background:#e6eaef;color:#0b1320}
 .btn-light:hover{background:#fff}
 nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
-.layout{padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+.layout{padding-top:clamp(36px,4.7vw,56px);padding-bottom:clamp(40px,4.7vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
 .side{display:flex;flex-direction:column;gap:32px}
 .kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#7fb3e0;margin-bottom:14px}
-h1{margin:0;font-size:56px;line-height:1;letter-spacing:-.035em;font-weight:700}
-.lead{margin:14px 0 0;font-size:18px;line-height:1.5;color:#aab4c0;max-width:34ch;text-wrap:pretty}
+h1{margin:0;font-size:clamp(40px,4.7vw,56px);line-height:1;letter-spacing:-.035em;font-weight:700;overflow-wrap:break-word}
+.lead{margin:14px 0 0;font-size:clamp(17px,1.5vw,18px);line-height:1.5;color:#aab4c0;max-width:34ch;text-wrap:pretty}
 .info{display:grid}
 .info > div{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
 .info .mono{margin-bottom:6px}
@@ -64,23 +65,35 @@ footer{border-top:1px solid rgba(255,255,255,.08);background:#080f1a}
 .side{gap:24px}
 }
 @media (max-width:640px){
-.wrap{padding-left:18px;padding-right:18px}
+.wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
 .bar{height:56px;gap:12px}
-.brand{gap:10px;min-width:0}
+.brand{gap:10px}
 .brand img{height:22px}
 .brand span{height:18px}
 nav{gap:14px}
+nav a.link{padding:12px 0}
 nav .btn{padding:7px 12px;font-size:13px}
-.layout{padding-top:36px;padding-bottom:40px}
 .kicker{font-size:12px;margin-bottom:12px}
-h1{font-size:40px}
-.lead{font-size:17px;margin-top:12px}
+.lead{margin-top:12px}
 .info > div{padding:12px 0}
 .panel{padding:20px}
 .row{grid-template-columns:1fr}
+input,textarea{font-size:16px}
 .fgrid{padding-top:20px;padding-bottom:20px;gap:8px}
 }
-@media (max-width:380px){nav a.link{display:none}}
+@media (max-width:460px){
+.bar{height:auto;min-height:56px;flex-direction:column;align-items:stretch;gap:10px;padding-top:10px;padding-bottom:10px}
+.brand{align-self:flex-start}
+nav{justify-content:space-between;gap:12px}
+nav a.link{display:inline-block;padding:8px 0}
+nav .btn{min-width:112px;text-align:center}
+}
+@media (max-height:500px) and (orientation:landscape){
+.layout{padding-top:32px;padding-bottom:32px}
+}
+@media (prefers-reduced-motion:reduce){
+*,::before,::after{transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
