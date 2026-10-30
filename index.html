@@ -31,6 +31,8 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add("js")</script>
+<script src="/js/main.js" defer></script>
 </head>
 <body>
 
@@ -50,7 +52,7 @@
 
 <main id="main-content">
   <section class="wrap hero">
-    <div class="hero-text">
+    <div class="hero-text" data-reveal>
       <p class="hero-sub">Empresa de transporte en Añelo, Vaca Muerta. Desde 2007.</p>
       <h1>Transporte JGT y Timol</h1>
       <p class="lead">Especialistas en cargas generales y pesadas, hidrogrúas y carretones para la industria petrolera en Vaca Muerta y Añelo.</p>
@@ -59,34 +61,34 @@
         <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
       </div>
     </div>
-    <img class="photo" src="/img/equipos-960.webp" srcset="/img/equipos-480.webp 480w, /img/equipos-800.webp 800w, /img/equipos-960.webp 960w, /img/equipos-1200.webp 1200w" sizes="(max-width:860px) calc(100vw - 36px), (max-width:1248px) 55vw, 660px" alt="Flota de equipos pesados de Transporte JGT y Timol" width="1200" height="600" fetchpriority="high" decoding="async">
+    <img class="photo" data-reveal style="--i:1" src="/img/equipos-960.webp" srcset="/img/equipos-480.webp 480w, /img/equipos-800.webp 800w, /img/equipos-960.webp 960w, /img/equipos-1200.webp 1200w" sizes="(max-width:860px) calc(100vw - 36px), (max-width:1248px) 55vw, 660px" alt="Flota de equipos pesados de Transporte JGT y Timol" width="1200" height="600" fetchpriority="high" decoding="async">
   </section>
 
   <section class="wrap metrics" aria-label="Métricas clave">
-    <div><div class="mono">Trayectoria</div><div class="n">18+ años</div><div class="d">En operación continua desde 2007</div></div>
-    <div><div class="mono">Base operativa</div><div class="n">Añelo</div><div class="d">Fortín de Piedra</div></div>
-    <div><div class="mono">Cobertura</div><div class="n">180 km</div><div class="d">Servicios en toda la zona</div></div>
+    <div data-reveal><div class="mono">Trayectoria</div><div class="n">18+ años</div><div class="d">En operación continua desde 2007</div></div>
+    <div data-reveal style="--i:1"><div class="mono">Base operativa</div><div class="n">Añelo</div><div class="d">Fortín de Piedra</div></div>
+    <div data-reveal style="--i:2"><div class="mono">Cobertura</div><div class="n">180 km</div><div class="d">Servicios en toda la zona</div></div>
   </section>
 
   <section id="servicios" class="wrap services line">
-    <h2>Servicios</h2>
+    <h2 data-reveal>Servicios</h2>
     <div class="grid4">
-      <div class="card"><img src="/img/carreton-400.webp" srcset="/img/carreton-400.webp 400w, /img/carreton-622.webp 622w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Transporte" width="400" height="300" loading="lazy" decoding="async"><div><span>Transporte</span></div></div>
-      <div class="card"><img src="/img/vivienda1-400.webp" srcset="/img/vivienda1-400.webp 400w, /img/vivienda1-500.webp 500w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Rental" width="400" height="300" loading="lazy" decoding="async"><div><span>Rental</span></div></div>
-      <div class="card"><img src="/img/mantenimiento-bases-400.webp" srcset="/img/mantenimiento-bases-400.webp 400w, /img/mantenimiento-bases-800.webp 800w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Mantenimiento de Bases" width="400" height="300" loading="lazy" decoding="async"><div><span>Mantenimiento de Bases</span></div></div>
-      <div class="card"><img src="/img/amoladora-400.webp" srcset="/img/amoladora-400.webp 400w, /img/amoladora-664.webp 664w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Metalúrgica" width="400" height="300" loading="lazy" decoding="async"><div><span>Metalúrgica</span></div></div>
-      <div class="card"><img src="/img/mecanica-400.webp" srcset="/img/mecanica-400.webp 400w, /img/mecanica-533.webp 533w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Mecánica" width="400" height="300" loading="lazy" decoding="async"><div><span>Mecánica</span></div></div>
-      <div class="card"><img src="/img/gomeria-movil-400.webp" srcset="/img/gomeria-movil-400.webp 400w, /img/gomeria-movil-600.webp 600w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Gomería Móvil" width="400" height="300" loading="lazy" decoding="async"><div><span>Gomería Móvil</span></div></div>
+      <div class="card" data-reveal><img src="/img/carreton-400.webp" srcset="/img/carreton-400.webp 400w, /img/carreton-622.webp 622w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Transporte" width="400" height="300" loading="lazy" decoding="async"><div><span>Transporte</span></div></div>
+      <div class="card" data-reveal style="--i:1"><img src="/img/vivienda1-400.webp" srcset="/img/vivienda1-400.webp 400w, /img/vivienda1-500.webp 500w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Rental" width="400" height="300" loading="lazy" decoding="async"><div><span>Rental</span></div></div>
+      <div class="card" data-reveal style="--i:2"><img src="/img/mantenimiento-bases-400.webp" srcset="/img/mantenimiento-bases-400.webp 400w, /img/mantenimiento-bases-800.webp 800w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Mantenimiento de Bases" width="400" height="300" loading="lazy" decoding="async"><div><span>Mantenimiento de Bases</span></div></div>
+      <div class="card" data-reveal><img src="/img/amoladora-400.webp" srcset="/img/amoladora-400.webp 400w, /img/amoladora-664.webp 664w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Metalúrgica" width="400" height="300" loading="lazy" decoding="async"><div><span>Metalúrgica</span></div></div>
+      <div class="card" data-reveal style="--i:1"><img src="/img/mecanica-400.webp" srcset="/img/mecanica-400.webp 400w, /img/mecanica-533.webp 533w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Mecánica" width="400" height="300" loading="lazy" decoding="async"><div><span>Mecánica</span></div></div>
+      <div class="card" data-reveal style="--i:2"><img src="/img/gomeria-movil-400.webp" srcset="/img/gomeria-movil-400.webp 400w, /img/gomeria-movil-600.webp 600w" sizes="(max-width:360px) calc(100vw - 36px), (max-width:767px) calc(50vw - 24px), (max-width:1248px) calc(33vw - 27px), 373px" alt="Gomería Móvil" width="400" height="300" loading="lazy" decoding="async"><div><span>Gomería Móvil</span></div></div>
     </div>
   </section>
 
   <section class="wrap grid2">
-    <div class="panel">
+    <div class="panel" data-reveal>
       <div class="tag">Rastreo satelital</div>
       <h3>Flota gerenciada</h3>
       <p>Cada unidad monitoreada en tiempo real.</p>
     </div>
-    <div class="panel">
+    <div class="panel" data-reveal style="--i:1">
       <div class="tag">Guardia activa</div>
       <h3>¿Emergencia? Hay alguien del otro lado.</h3>
       <p>Atención telefónica para emergencias, inclusive fines de semana.</p>
@@ -94,18 +96,30 @@
   </section>
 
   <section class="wrap clients line" aria-label="Clientes">
-    <h2>Confían en nosotros</h2>
-    <div class="logos">
-      <div><img src="/logos/flowback-120.webp" alt="Flowback" width="243" height="120" loading="lazy" decoding="async"></div>
-      <div><img src="/logos/slb.svg" alt="SLB" width="960" height="960" loading="lazy" decoding="async"></div>
-      <div><img src="/logos/naborss.webp" alt="Nabors" width="360" height="69" loading="lazy" decoding="async"></div>
-      <div><img src="/logos/phoenix.webp" alt="Phoenix Global Resources" width="314" height="54" loading="lazy" decoding="async"></div>
-      <div><img src="/logos/cws.svg" alt="CWS CalFrac" width="1552" height="1863" loading="lazy" decoding="async"></div>
-      <div><img src="/logos/tacker.webp" alt="Tacker" width="272" height="111" loading="lazy" decoding="async"></div>
+    <h2 data-reveal>Confían en nosotros</h2>
+    <div class="marquee" data-reveal style="--i:1">
+      <div class="marquee-track">
+        <div class="logos">
+        <div><img src="/logos/flowback-120.webp" alt="Flowback" width="243" height="120" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/slb.svg" alt="SLB" width="960" height="960" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/naborss.webp" alt="Nabors" width="360" height="69" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/phoenix.webp" alt="Phoenix Global Resources" width="314" height="54" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/cws.svg" alt="CWS CalFrac" width="1552" height="1863" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/tacker.webp" alt="Tacker" width="272" height="111" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="logos" aria-hidden="true">
+        <div><img src="/logos/flowback-120.webp" alt="" width="243" height="120" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/slb.svg" alt="" width="960" height="960" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/naborss.webp" alt="" width="360" height="69" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/phoenix.webp" alt="" width="314" height="54" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/cws.svg" alt="" width="1552" height="1863" loading="lazy" decoding="async"></div>
+        <div><img src="/logos/tacker.webp" alt="" width="272" height="111" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
     </div>
   </section>
   <section class="cta">
-    <div class="wrap">
+    <div class="wrap" data-reveal>
       <h2>¿Necesitás mover una carga?</h2>
       <p>Contanos qué tenés que transportar y te enviamos una cotización.</p>
       <a class="btn btn-ghost" href="/contacto/">Contactanos</a>
