@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   color-scheme:light;
@@ -26,8 +26,8 @@
   --texto:#262626;--texto-suave:#5c5c5c;--borde:#dedede;
   --font:'Open Sans',Arial,Helvetica,sans-serif;
   --font-titulos:'Montserrat','Open Sans',Arial,sans-serif;
-  --wrap:1180px;--gutter:max(24px,env(safe-area-inset-left),env(safe-area-inset-right));
-  --header-h:78px;
+  --wrap:1200px;--gutter:max(24px,env(safe-area-inset-left),env(safe-area-inset-right));
+  --header-h:64px;--font-nav:'IBM Plex Sans','Open Sans',Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -44,15 +44,15 @@ h1,h2,h4{font-family:var(--font-titulos);line-height:1.2}
 
 header{position:sticky;inset-block-start:0;z-index:10;background:var(--bg-footer);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .bar{block-size:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:18px;min-inline-size:0}
-.brand img{block-size:38px;inline-size:auto}
-.brand span{inline-size:1px;block-size:30px;background:rgba(255,255,255,.3);flex-shrink:0}
-nav{display:flex;align-items:center;gap:30px;flex-shrink:0}
-nav a.link{font-family:var(--font-titulos);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.03em;color:#c8d2df;padding-block:8px;border-block-end:2px solid transparent}
-nav .btn{padding:10px 20px;font-size:13px;background:#fff;color:var(--bg-footer);border-color:#fff}
+.brand{display:flex;align-items:center;gap:14px;min-inline-size:0}
+.brand img{block-size:30px;inline-size:auto}
+.brand span{inline-size:1px;block-size:22px;background:rgba(255,255,255,.3);flex-shrink:0}
+nav{display:flex;align-items:center;gap:28px;font-family:var(--font-nav);font-size:14px;font-weight:500;flex-shrink:0}
+nav a.link{color:#c8d2df}
+nav .btn{padding:8px 16px;border:0;border-radius:2px;font-family:var(--font-nav);font-weight:600;font-size:14px;text-transform:none;letter-spacing:0;background:#fff;color:var(--bg-footer)}
 @media (hover:hover){
-  nav a.link:hover{color:#fff;border-color:#fff}
-  nav .btn:hover{background:#e3e9f1;border-color:#e3e9f1}
+  nav a.link:hover{color:#fff}
+  nav .btn:hover{background:#e3e9f1}
   .btn-marca:hover{background:var(--marca-oscuro);border-color:var(--marca-oscuro)}
   .info a:hover{color:var(--marca)}
 }
@@ -88,14 +88,14 @@ footer{background:var(--bg-footer);color:#c8d2df;font-size:15px}
   .layout{grid-template-columns:1fr;gap:32px}
 }
 @media (width <= 640px){
-  :root{--gutter:max(18px,env(safe-area-inset-left),env(safe-area-inset-right));--header-h:64px}
-  .bar{gap:12px}
+  :root{--gutter:max(18px,env(safe-area-inset-left),env(safe-area-inset-right))}
+  .bar{gap:16px}
   .brand{gap:10px}
-  .brand img{block-size:28px}
-  .brand span{block-size:22px}
-  nav{gap:16px}
-  nav a.link{font-size:13px}
-  nav .btn{padding:9px 14px;font-size:12px}
+  .brand img{block-size:24px}
+  .brand span{block-size:20px}
+  nav{gap:20px;font-size:13px}
+  nav a.link{padding-block:12px}
+  nav .btn{padding:9px 14px;font-size:13px}
   .info > div{padding-block:12px}
   .panel{padding:20px}
   input,textarea{font-size:16px}
@@ -106,7 +106,7 @@ footer{background:var(--bg-footer);color:#c8d2df;font-size:15px}
   .brand img{block-size:auto;inline-size:clamp(52px,18vw,88px)}
   .brand span{block-size:16px}
   nav{gap:10px}
-  nav a.link{font-size:12px;white-space:nowrap}
+  nav a.link{white-space:nowrap}
   nav .btn{padding:8px 10px;font-size:12px;white-space:nowrap}
 }
 @media (pointer:coarse){
