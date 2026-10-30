@@ -61,7 +61,7 @@ h2{margin:clamp(16px,2vw,24px) 0 clamp(24px,3.4vw,40px);font-family:var(--font-d
 .card img{inline-size:100%;aspect-ratio:4/3;object-fit:cover}
 @media (hover:hover){
   .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,35,64,.12);border-color:var(--line-strong)}
-  .panel:hover{border-color:var(--line-strong)}
+  .panel:hover{border-color:rgba(255,255,255,.22);transform:translateY(-2px);box-shadow:0 14px 30px rgba(15,35,64,.25)}
 }
 .card div{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:17px}
 .card div span:last-child{color:var(--fg-dim)}
@@ -71,12 +71,12 @@ h2{margin:clamp(16px,2vw,24px) 0 clamp(24px,3.4vw,40px);font-family:var(--font-d
 
 /* Paneles */
 .grid2{padding-block-end:var(--space-section);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
-.panel{padding:clamp(24px,3vw,36px);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .3s}
-.panel .tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--accent)}
-.tag .dot{inline-size:8px;block-size:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(28,61,102,.45);animation:pulse 2.2s ease-out infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(28,61,102,0)}100%{box-shadow:0 0 0 0 rgba(28,61,102,0)}}
-.panel h3{margin:16px 0 10px;font-family:var(--font-display);font-size:clamp(20px,2vw,24px);letter-spacing:-.01em;font-weight:700}
-.panel p{margin:0;color:var(--fg-muted);font-size:16px;line-height:1.6}
+.panel{--panel-accent:#6cc7ff;position:relative;overflow:hidden;padding:clamp(24px,3vw,36px);background:var(--bg-footer);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:#fff;transition:border-color .3s,transform .3s,box-shadow .3s}
+.panel .tag{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--panel-accent)}
+.tag .dot{--ring:color-mix(in srgb,var(--panel-accent) 55%,transparent);inline-size:8px;block-size:8px;border-radius:50%;background:var(--panel-accent);box-shadow:0 0 0 0 var(--ring);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--ring)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.panel h3{position:relative;margin:16px 0 10px;font-family:var(--font-display);font-size:clamp(20px,2vw,24px);letter-spacing:-.01em;font-weight:700;color:#fff}
+.panel p{position:relative;margin:0;color:rgba(255,255,255,.8);font-size:16px;line-height:1.6}
 
 /* Clientes */
 .clients{padding-block:clamp(32px,4.7vw,56px) var(--space-section)}
