@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1320">
+<meta name="theme-color" content="#0f2340">
 <title>Contacto | Transporte JGT y Timol</title>
 <meta name="description" content="Contactanos para realizar consultas, solicitar cotizaciones o conocer nuestros servicios logísticos en Añelo, Cipolletti y la región de Vaca Muerta.">
 <link rel="canonical" href="https://www.transporte-jgt.com/contacto/">
@@ -16,95 +16,98 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
-  color-scheme:dark;
-  --bg:#0b1320;--bg-footer:#080f1a;--surface:#111b2a;
-  --fg:#e6eaef;--fg-muted:#aab4c0;--fg-dim:#7d8896;--accent:#7fb3e0;
-  --line:rgba(255,255,255,.08);--line-strong:rgba(255,255,255,.2);
-  --font:'IBM Plex Sans',sans-serif;--font-mono:'IBM Plex Mono',monospace;
-  --wrap:1200px;--gutter:max(24px,env(safe-area-inset-left),env(safe-area-inset-right));
-  --header-h:64px;--radius:2px;
+  color-scheme:light;
+  --marca:#1c3d66;--marca-oscuro:#132c4b;
+  --bg:#ffffff;--bg-footer:#0f2340;
+  --texto:#262626;--texto-suave:#5c5c5c;--borde:#dedede;
+  --font:'Open Sans',Arial,Helvetica,sans-serif;
+  --font-titulos:'Montserrat','Open Sans',Arial,sans-serif;
+  --wrap:1180px;--gutter:max(24px,env(safe-area-inset-left),env(safe-area-inset-right));
+  --header-h:78px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{min-block-size:100vh;min-block-size:100dvh;margin:0;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{min-block-size:100vh;min-block-size:100dvh;margin:0;display:flex;flex-direction:column;background:var(--bg);color:var(--texto);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 main{flex:1}
-a{color:var(--fg);text-decoration:none}
+a{color:inherit;text-decoration:none}
 img{display:block;max-inline-size:100%;block-size:auto}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:2px solid var(--marca);outline-offset:3px}
 .wrap{max-inline-size:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
-.mono{font-size:14px;font-weight:600;color:var(--fg-muted)}
-header{position:sticky;inset-block-start:0;z-index:10;background:var(--bg);border-block-end:1px solid var(--line)}
+h1,h2,h4{font-family:var(--font-titulos);line-height:1.2}
+
+.btn{display:inline-block;padding:13px 28px;border-radius:4px;font-family:var(--font-titulos);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.03em;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-marca{background:var(--marca);color:#fff;border-color:var(--marca)}
+
+header{position:sticky;inset-block-start:0;z-index:10;background:var(--bg-footer);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .bar{block-size:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:14px;min-inline-size:0}
-.brand img{block-size:30px;inline-size:auto}
-.brand span{inline-size:1px;block-size:22px;background:var(--line-strong);flex-shrink:0}
-nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;flex-shrink:0}
-nav a.link{color:var(--fg-muted)}
-.btn{display:inline-block;padding:12px 22px;border-radius:var(--radius);font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
-.btn-light{background:var(--fg);color:var(--bg)}
-nav .btn{padding:8px 16px;border-radius:6px;font-size:14px}
+.brand{display:flex;align-items:center;gap:18px;min-inline-size:0}
+.brand img{block-size:38px;inline-size:auto}
+.brand span{inline-size:1px;block-size:30px;background:rgba(255,255,255,.3);flex-shrink:0}
+nav{display:flex;align-items:center;gap:30px;flex-shrink:0}
+nav a.link{font-family:var(--font-titulos);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.03em;color:#c8d2df;padding-block:8px;border-block-end:2px solid transparent}
+nav .btn{padding:10px 20px;font-size:13px;background:#fff;color:var(--bg-footer);border-color:#fff}
 @media (hover:hover){
-  nav a.link:hover{color:#fff}
-  .btn-light:hover{background:#fff}
-  .info a:hover{color:var(--accent)}
+  nav a.link:hover{color:#fff;border-color:#fff}
+  nav .btn:hover{background:#e3e9f1;border-color:#e3e9f1}
+  .btn-marca:hover{background:var(--marca-oscuro);border-color:var(--marca-oscuro)}
+  .info a:hover{color:var(--marca)}
 }
-.layout{padding-block:clamp(36px,4.7vw,56px) clamp(40px,4.7vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
-.side{display:flex;flex-direction:column;gap:32px}
-.kicker{font-family:var(--font-mono);font-size:13px;color:var(--accent);margin-block-end:14px}
-h1{margin:0;font-size:clamp(40px,4.7vw,56px);line-height:1;letter-spacing:-.035em;font-weight:700;overflow-wrap:break-word}
-.lead{margin:14px 0 0;font-size:clamp(17px,1.5vw,18px);line-height:1.5;color:var(--fg-muted);max-inline-size:34ch;text-wrap:pretty}
-.info{display:grid}
-.info > div{padding-block:16px;border-block-start:1px solid var(--line)}
-.info .mono{margin-block-end:6px}
-.panel{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);container-type:inline-size}
+
+.layout{padding-block:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:start}
+.side h1{margin:0;font-size:clamp(30px,3.6vw,42px);font-weight:800;text-transform:uppercase}
+.side h1::after{content:"";display:block;inline-size:60px;block-size:4px;background:var(--marca);margin-block-start:14px}
+.lead{margin:18px 0 0;color:var(--texto-suave);font-size:17px;line-height:1.55;max-inline-size:40ch;text-wrap:pretty}
+.info{margin-block-start:32px;display:grid}
+.info > div{padding-block:16px;border-block-start:1px solid var(--borde)}
+.info h4{margin:0 0 4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--marca)}
+.muted{color:var(--texto-suave)}
+.panel{padding:32px;background:#fff;border:1px solid var(--borde);border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.06);container-type:inline-size}
+.panel h2{margin:0 0 20px;font-size:22px;font-weight:700}
 form{display:grid;gap:16px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .row .full{grid-column:1 / -1}
 @container (width < 480px){
   .row{grid-template-columns:1fr}
 }
-label{display:block;font-size:14px;font-weight:500;margin-block-end:6px}
-label span{color:var(--fg-dim);font-weight:400}
-input,textarea{inline-size:100%;padding:11px 14px;background:var(--bg);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);color:var(--fg);font:inherit;font-size:15px;outline:none;transition:border-color .15s}
-input:focus-visible,textarea:focus-visible{border-color:var(--accent);outline:none}
-textarea{display:block;resize:vertical;min-block-size:120px}
-::placeholder{color:var(--fg-dim)}
-.notice{margin:0 0 16px;padding:14px 18px;border:1px solid rgba(127,179,224,.4);border-radius:var(--radius);color:var(--fg);background:var(--bg)}
-.muted{color:var(--fg-muted)}
-footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
-.fgrid{padding-block:24px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--fg-dim)}
-@media (width <= 860px){
-  .layout{grid-template-columns:1fr;gap:28px}
-  .side{gap:24px}
+label{display:block;font-size:14px;font-weight:600;margin-block-end:6px}
+label span{color:var(--texto-suave);font-weight:400}
+input,textarea{inline-size:100%;padding:11px 14px;background:#fff;border:1px solid #c8c8c8;border-radius:4px;color:var(--texto);font:inherit;font-size:15px;outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus-visible,textarea:focus-visible{border-color:var(--marca);box-shadow:0 0 0 3px rgba(28,61,102,.18);outline:none}
+textarea{display:block;resize:vertical;min-block-size:130px}
+::placeholder{color:#9a9a9a}
+.notice{margin:0 0 16px;padding:14px 18px;border:1px solid #9fd29f;border-radius:4px;color:#1d5a1d;background:#edf8ed}
+
+footer{background:var(--bg-footer);color:#c8d2df;font-size:15px}
+.copy{padding-block:18px;font-size:13px;color:#8fa0b8;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (width <= 900px){
+  .layout{grid-template-columns:1fr;gap:32px}
 }
 @media (width <= 640px){
-  :root{--gutter:max(18px,env(safe-area-inset-left),env(safe-area-inset-right));--header-h:56px}
+  :root{--gutter:max(18px,env(safe-area-inset-left),env(safe-area-inset-right));--header-h:64px}
   .bar{gap:12px}
   .brand{gap:10px}
-  .brand img{block-size:22px}
-  .brand span{block-size:18px}
-  nav{gap:14px}
-  nav a.link{padding-block:12px}
-  nav .btn{padding:7px 12px;font-size:13px}
-  .kicker{font-size:12px;margin-block-end:12px}
-  .lead{margin-block-start:12px}
+  .brand img{block-size:28px}
+  .brand span{block-size:22px}
+  nav{gap:16px}
+  nav a.link{font-size:13px}
+  nav .btn{padding:9px 14px;font-size:12px}
   .info > div{padding-block:12px}
   .panel{padding:20px}
   input,textarea{font-size:16px}
-  .fgrid{padding-block:20px;gap:8px}
 }
 @media (width <= 460px){
   .bar{gap:8px}
   .brand{gap:8px}
   .brand img{block-size:auto;inline-size:clamp(52px,18vw,88px)}
   .brand span{block-size:16px}
-  nav{gap:10px;font-size:12px}
-  nav a.link{white-space:nowrap}
-  nav .btn{padding:7px 10px;font-size:12px;white-space:nowrap}
+  nav{gap:10px}
+  nav a.link{font-size:12px;white-space:nowrap}
+  nav .btn{padding:8px 10px;font-size:12px;white-space:nowrap}
 }
 @media (pointer:coarse){
   nav a.link{padding-block:12px}
@@ -128,7 +131,7 @@ footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
     </a>
     <nav aria-label="Navegación principal">
       <a class="link" href="/#servicios">Servicios</a>
-      <a class="btn btn-light" href="/contacto/">Contacto</a>
+      <a class="btn btn-marca" href="/contacto/">Contacto</a>
     </nav>
   </div>
 </header>
@@ -136,29 +139,27 @@ footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
 <main id="main-content">
   <section class="wrap layout">
     <div class="side">
-      <div>
-        <div class="kicker">Contacto</div>
-        <h1>Escribinos</h1>
-        <p class="lead">El formulario es para consultas de cotizaciones. No es para solicitudes de empleo.</p>
-      </div>
+      <h1>Contacto</h1>
+      <p class="lead">Escribinos para consultas y pedidos de cotización. El formulario no es para solicitudes de empleo.</p>
       <div class="info">
         <div>
-          <div class="mono">Oficina</div>
+          <h4>Oficina</h4>
           <div>Pastor J. A. Bowdler 502</div>
           <div class="muted">Cipolletti, Río Negro</div>
         </div>
         <div>
-          <div class="mono">Base operativa</div>
+          <h4>Base operativa</h4>
           <a href="https://maps.app.goo.gl/1Mv8xwG2wS7Np83u7" target="_blank" rel="noopener">Ruta 17, Añelo, Neuquén</a>
         </div>
         <div>
-          <div class="mono">Redes</div>
+          <h4>Redes</h4>
           <a href="https://ar.linkedin.com/company/transporte-jgt-s-r-l-y-timol-s-r-l" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
 
     <div class="panel">
+      <h2>Envianos tu consulta</h2>
       <p class="notice" id="form-success" role="status" hidden>¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.</p>
       <form id="contact-form" action="https://formsubmit.co/ptarifa@timolsrl.com" method="POST">
         <input type="hidden" name="_template" value="basic">
@@ -183,17 +184,14 @@ footer{border-block-start:1px solid var(--line);background:var(--bg-footer)}
           <label for="message">Mensaje</label>
           <textarea id="message" name="Mensaje" rows="5" placeholder="Escribí tu consulta acá..." enterkeyhint="send" required></textarea>
         </div>
-        <div><button type="submit" class="btn btn-light">Enviar</button></div>
+        <div><button type="submit" class="btn btn-marca">Enviar consulta</button></div>
       </form>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap fgrid">
-    <span>Transporte JGT SRL y Timol SRL</span>
-    <span>Seguro nosotros podemos.</span>
-  </div>
+  <div class="wrap copy"><span>Transporte JGT SRL y Timol SRL</span><span>Seguro nosotros podemos.</span></div>
 </footer>
 
 <script>
