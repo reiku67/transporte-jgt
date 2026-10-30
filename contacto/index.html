@@ -111,6 +111,12 @@ footer{background:var(--bg-footer);color:#c8d2df;font-size:15px}
 }
 @media (pointer:coarse){
   nav a.link{padding-block:12px}
+  nav .btn{display:inline-flex;align-items:center;min-block-size:44px}
+  .info a{display:inline-block;padding-block:6px}
+}
+@media (width <= 400px){
+  .side h1::after{margin-block-start:10px}
+  .btn{inline-size:100%;text-align:center}
 }
 @media (max-height:500px) and (orientation:landscape){
   .layout{padding-block:32px}
