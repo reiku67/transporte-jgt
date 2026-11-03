@@ -16,7 +16,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);-webk
 a{color:var(--fg);text-decoration:none}
 img{display:block;max-inline-size:100%;block-size:auto}
 /* Fotos: el hueco reservado se ve con un tono neutro hasta que llega la imagen (sin JS ni animación) */
-.photo,.card img,.equipo img,.svc img,.gal img{background:var(--img-bg)}
+.photo,.card img,.equipo img,.svc img,.gal img{background:var(--img-bg);color:transparent}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-inline-size:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .mono{font-size:14px;font-weight:600;color:var(--fg-muted)}
