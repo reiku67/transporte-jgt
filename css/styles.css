@@ -52,6 +52,28 @@ h1{margin:0;font-family:var(--font-display);font-size:clamp(30px,3.8vw,48px);lin
 .actions .btn,.cta .btn{display:inline-flex;align-items:center;justify-content:center;min-block-size:44px;text-align:center}
 .photo{inline-size:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.14)}
 
+/* Hero de portada: panel azul que continúa el header + foto al corte hasta el borde derecho */
+.hero-split{display:grid;grid-template-columns:minmax(var(--gutter),1fr) minmax(0,calc((var(--wrap) - 2 * var(--gutter)) * .42)) minmax(0,calc((var(--wrap) - 2 * var(--gutter)) * .58)) minmax(var(--gutter),1fr);align-items:center;background:var(--bg-footer);color:#fff;border-block-start:1px solid rgba(255,255,255,.08)}
+.hero-split .hero-text{grid-column:2;grid-row:1;padding-block:clamp(40px,5vw,64px);padding-inline-end:clamp(24px,4vw,56px)}
+.hero-split h1{font-size:clamp(32px,4vw,54px);color:#fff}
+.hero-split .lead{color:rgba(255,255,255,.82)}
+.hero-split .btn-light{background:#fff;color:var(--bg-footer)}
+.hero-media{grid-column:3/5;grid-row:1;align-self:stretch;position:relative;min-block-size:clamp(360px,33vw,520px);background:color-mix(in srgb,#fff 10%,var(--bg-footer))}
+.hero-media img{position:absolute;inset:0;inline-size:100%;block-size:100%;object-fit:cover;object-position:32% 50%;color:transparent}
+.link-arrow{display:inline-flex;align-items:center;gap:6px;min-block-size:44px;font-weight:600;font-size:15px;color:#fff;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.45);transition:text-decoration-color .15s}
+@media (hover:hover){
+  .hero-split .btn-light:hover{background:#e3e9f1;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .link-arrow:hover{text-decoration-color:#fff}
+}
+@media (width <= 860px){
+  .hero-split{grid-template-columns:1fr;border-block-start:0}
+  .hero-media{grid-column:1;grid-row:1;align-self:auto;min-block-size:0;aspect-ratio:16/9}
+  .hero-split .hero-text{grid-column:1;grid-row:2;padding:32px var(--gutter) 40px}
+}
+@media (width <= 640px){
+  .hero-media{aspect-ratio:3/2}
+}
+
 /* Métricas */
 .metrics{padding-block:clamp(48px,6vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .metrics .n{font-family:var(--font-display);font-size:clamp(36px,3.8vw,46px);font-weight:800;letter-spacing:-.03em;margin-block-start:10px}
